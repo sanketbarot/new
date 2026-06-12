@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator - Calculate SIP Returns Online Free | AI ToolCor</title>
+    <meta name="description" content="Calculate your SIP returns and maturity amount instantly. Free online SIP calculator for mutual fund investments.">
+    <meta name="keywords" content="sip calculator, sip returns calculator, mutual fund sip, systematic investment plan calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/sip-calculator.html">
+    <meta property="og:title" content="SIP Calculator | AI ToolCor">
+    <meta property="og:description" content="Calculate SIP returns and wealth gained. Free and instant.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/sip-calculator.html">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"SIP Calculator","url":"https://calculator.aitoolcor.com/pages/finance/sip-calculator.html","description":"Calculate SIP returns for mutual fund investments.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <link rel="icon" type="image/x-icon" href="/assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div><span class="brand-text">AI ToolCor<sup>CALC</sup></span></div>
+        </div>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../health/" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../business/" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../daily-use/" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../education/" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../math/" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../utility/" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><i class="fa-solid fa-chevron-right"></i>
+                <a href="index.html">Finance</a><i class="fa-solid fa-chevron-right"></i>
+                <span>SIP Calculator</span>
+            </div>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <div class="tool-layout">
+            <section class="tool-calculator-card">
+                <div class="tool-header">
+                    <div class="tool-icon-lg green"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <h1 class="tool-title">SIP Calculator</h1>
+                        <p class="tool-sub">Calculate your monthly SIP returns</p>
+                    </div>
+                    <span class="tool-badge-pill popular">🔥 Popular</span>
+                </div>
+
+                <div class="tool-inputs">
+                    <div class="input-group">
+                        <label for="sipAmount">Monthly SIP Amount (₹)</label>
+                        <div class="input-wrap">
+                            <span class="input-prefix">₹</span>
+                            <input type="number" id="sipAmount" value="5000" min="500" oninput="calculate()">
+                        </div>
+                        <input type="range" id="sipRange" min="500" max="100000" step="500" value="5000"
+                               oninput="document.getElementById('sipAmount').value=this.value;calculate()" class="range-slider">
+                        <div class="range-labels"><span>₹500</span><span>₹1 Lakh</span></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sipRate">Expected Return Rate (% per year)</label>
+                        <div class="input-wrap">
+                            <input type="number" id="sipRate" value="12" min="1" max="50" step="0.1" oninput="calculate()">
+                            <span class="input-suffix">%</span>
+                        </div>
+                        <input type="range" id="sipRateRange" min="1" max="30" step="0.1" value="12"
+                               oninput="document.getElementById('sipRate').value=this.value;calculate()" class="range-slider">
+                        <div class="range-labels"><span>1%</span><span>30%</span></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sipTenure">Investment Period (Years)</label>
+                        <div class="input-wrap">
+                            <input type="number" id="sipTenure" value="10" min="1" max="40" oninput="calculate()">
+                            <span class="input-suffix">Yrs</span>
+                        </div>
+                        <input type="range" id="sipTenureRange" min="1" max="40" step="1" value="10"
+                               oninput="document.getElementById('sipTenure').value=this.value;calculate()" class="range-slider">
+                        <div class="range-labels"><span>1 Yr</span><span>40 Yrs</span></div>
+                    </div>
+                </div>
+
+                <button class="calc-btn" onclick="calculate()">
+                    <i class="fa-solid fa-calculator"></i> Calculate SIP Returns
+                </button>
+
+                <div class="result-box" id="resultBox">
+                    <div class="result-grid">
+                        <div class="result-item highlight">
+                            <span class="result-label">Maturity Amount</span>
+                            <span class="result-value" id="maturityResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Invested</span>
+                            <span class="result-value green-text" id="investedResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Wealth Gained</span>
+                            <span class="result-value red-text" id="gainResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Returns</span>
+                            <span class="result-value" id="returnsResult">0%</span>
+                        </div>
+                    </div>
+                    <div class="breakdown-bar">
+                        <div class="bar-principal" id="barInvested" style="width:50%"></div>
+                        <div class="bar-interest" id="barGain" style="width:50%"></div>
+                    </div>
+                    <div class="bar-legend">
+                        <span class="legend-item"><span class="legend-dot principal"></span>Invested</span>
+                        <span class="legend-item"><span class="legend-dot interest"></span>Gain</span>
+                    </div>
+                </div>
+
+                <div class="tool-actions">
+                    <button class="action-btn" onclick="resetCalculator()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    <button class="action-btn" onclick="copyResult()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareResult()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                </div>
+            </section>
+
+            <aside class="tool-info-panel">
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-circle-info"></i> SIP Formula</h2>
+                    <div class="formula-box"><code>M = P × ((1+r)ⁿ - 1) / r × (1+r)</code></div>
+                    <div class="formula-legend">
+                        <p><strong>M</strong> = Maturity amount</p>
+                        <p><strong>P</strong> = Monthly SIP amount</p>
+                        <p><strong>r</strong> = Monthly rate of return</p>
+                        <p><strong>n</strong> = Number of months</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-lightbulb"></i> Smart Tips</h2>
+                    <ul class="tips-list">
+                        <li>Start SIP early for compounding benefits</li>
+                        <li>Increase SIP amount by 10% every year</li>
+                        <li>Stay invested for at least 5+ years</li>
+                        <li>Choose funds based on risk appetite</li>
+                        <li>Review portfolio every 6 months</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-link"></i> Related Tools</h2>
+                    <div class="related-tools">
+                        <a href="lumpsum-calculator.html" class="related-tool"><i class="fa-solid fa-coins"></i> Lumpsum Calculator</a>
+                        <a href="mutual-fund-returns-calculator.html" class="related-tool"><i class="fa-solid fa-chart-pie"></i> MF Returns</a>
+                        <a href="emi-calculator.html" class="related-tool"><i class="fa-solid fa-calculator"></i> EMI Calculator</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;">AI ToolCor Calculator</a>. All rights reserved.</span>
+            <div class="footer-links"><a href="../../index.html">Home</a><a href="index.html">Finance</a></div>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="../../js/category.js"></script>
+<script>
+function calculate() {
+    const P = parseFloat(document.getElementById('sipAmount').value) || 0;
+    const annualRate = parseFloat(document.getElementById('sipRate').value) || 0;
+    const years = parseFloat(document.getElementById('sipTenure').value) || 0;
+    const n = years * 12;
+    const r = annualRate / 12 / 100;
+
+    if (P <= 0 || annualRate <= 0 || n <= 0) return;
+
+    const M = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+    const invested = P * n;
+    const gain = M - invested;
+    const returnPct = ((gain / invested) * 100).toFixed(1);
+    const investedPct = (invested / M) * 100;
+    const gainPct = (gain / M) * 100;
+
+    document.getElementById('maturityResult').textContent = formatCurrency(M);
+    document.getElementById('investedResult').textContent = formatCurrency(invested);
+    document.getElementById('gainResult').textContent = formatCurrency(gain);
+    document.getElementById('returnsResult').textContent = returnPct + '%';
+    document.getElementById('barInvested').style.width = investedPct.toFixed(1) + '%';
+    document.getElementById('barGain').style.width = gainPct.toFixed(1) + '%';
+}
+
+function formatCurrency(v) { return '₹' + Math.round(v).toLocaleString('en-IN'); }
+function resetCalculator() {
+    document.getElementById('sipAmount').value = 5000;
+    document.getElementById('sipRate').value = 12;
+    document.getElementById('sipTenure').value = 10;
+    document.getElementById('sipRange').value = 5000;
+    document.getElementById('sipRateRange').value = 12;
+    document.getElementById('sipTenureRange').value = 10;
+    calculate();
+}
+function copyResult() {
+    const text = `SIP Calculator Results:\nMaturity: ${document.getElementById('maturityResult').textContent}\nInvested: ${document.getElementById('investedResult').textContent}\nGain: ${document.getElementById('gainResult').textContent}\n\ncalculator.aitoolcor.com`;
+    navigator.clipboard.writeText(text).then(() => showToast('Copied!')).catch(() => showToast('Failed'));
+}
+function shareResult() {
+    if (navigator.share) { navigator.share({ title: 'SIP Calculator', url: window.location.href }); }
+    else { navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied!')); }
+}
+function showToast(msg) {
+    const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+    document.body.appendChild(t); setTimeout(() => t.classList.add('show'), 10);
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2500);
+}
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarOverlay').classList.toggle('show');
+    document.body.style.overflow = document.getElementById('sidebar').classList.contains('open') ? 'hidden' : '';
+}
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+window.addEventListener('scroll', function() {
+    const btn = document.querySelector('.float-btn');
+    if (btn) { btn.style.opacity = window.scrollY > 300 ? '1' : '0'; btn.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none'; }
+}, { passive: true });
+document.addEventListener('DOMContentLoaded', function() {
+    calculate();
+    const btn = document.querySelector('.float-btn');
+    if (btn) { btn.style.opacity = '0'; btn.style.transition = 'opacity 0.3s'; }
+});
+</script>
+</body>
+</html>

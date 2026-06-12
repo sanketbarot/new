@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Admin Login - AI ToolCor Calculator</title>
+    <meta name="description" content="Admin panel login for AI ToolCor Calculator">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="login-body">
+
+<!-- Background -->
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<!-- Login Container -->
+<div class="login-container">
+    
+    <!-- Left Side - Branding -->
+    <div class="login-left">
+        <div class="login-brand">
+            <div class="login-brand-icon">
+                <div class="login-brand-circle"></div>
+            </div>
+            <h2 class="login-brand-name">AI ToolCor<sup>CALC</sup></h2>
+        </div>
+        
+        <div class="login-hero">
+            <span class="eyebrow-pill">🔐 Admin Panel</span>
+            <h1 class="login-hero-title">
+                Welcome<br>
+                <span class="serif-italic">back, Admin</span>
+            </h1>
+            <p class="login-hero-sub">
+                Manage all 70+ calculators, categories, and site settings from one place.
+            </p>
+            
+            <div class="login-features">
+                <div class="login-feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Manage 70+ Tools</span>
+                </div>
+                <div class="login-feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Edit Categories</span>
+                </div>
+                <div class="login-feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Update SEO Settings</span>
+                </div>
+                <div class="login-feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Backup & Restore Data</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-footer-text">
+            © 2024 AI ToolCor Calculator. Secure Admin Access.
+        </div>
+    </div>
+    
+    <!-- Right Side - Form -->
+    <div class="login-right">
+        <div class="login-form-wrapper">
+            
+            <div class="login-form-header">
+                <div class="login-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2>Sign in to Admin Panel</h2>
+                <p>Enter your credentials to continue</p>
+            </div>
+            
+            <form class="login-form" id="loginForm" onsubmit="return handleLogin(event)">
+                
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fa-solid fa-user"></i> Username
+                    </label>
+                    <div class="input-wrap">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                            autofocus>
+                    </div>
+                </div>
+                
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fa-solid fa-key"></i> Password
+                    </label>
+                    <div class="input-wrap password-wrap">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+                        <button type="button" class="password-toggle" onclick="togglePassword()" aria-label="Show password">
+                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Remember Me -->
+                <div class="form-options">
+                    <label class="checkbox-wrap">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link" onclick="showForgotInfo();return false;">
+                        Forgot password?
+                    </a>
+                </div>
+                
+                <!-- Error Message -->
+                <div class="error-message" id="errorMsg" style="display:none;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="errorText">Invalid credentials!</span>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-text">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Sign In to Admin
+                    </span>
+                    <span class="btn-loader" style="display:none;">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        Signing in...
+                    </span>
+                </button>
+                
+                <!-- Default Credentials Info -->
+                <div class="login-info">
+                    <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="info-content">
+                        <strong>Default Credentials:</strong>
+                        <code>admin / aitoolcor@2024</code>
+                    </div>
+                </div>
+                
+                <!-- Back to Site -->
+                <a href="../index.html" class="back-to-site">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Website
+                </a>
+                
+            </form>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+</div>
+
+<!-- Scripts -->
+<script src="../js/admin-auth.js"></script>
+
+</body>
+</html>

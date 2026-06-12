@@ -1,0 +1,39 @@
+{
+  "site": {
+    "name": "ToolVerse",
+    "tagline": "Your Ultimate Calculator Hub",
+    "description": "70+ free online calculators for finance, health, business, math and more.",
+    "logo": "assets/logos/toolverse-logo.svg",
+    "favicon": "assets/logos/favicon.ico",
+    "url": "https://toolverse.com",
+    "email": "hello@toolverse.com"
+  },
+  "seo": {
+    "defaultTitle": "ToolVerse - Free Online Calculators & Tools",
+    "defaultDescription": "Access 70+ free calculators for EMI, SIP, BMI, GST, income tax and more. Fast, accurate and easy to use.",
+    "keywords": ["calculator", "emi calculator", "sip calculator", "bmi calculator", "gst calculator", "free tools"],
+    "ogImage": "assets/images/og-image.jpg"
+  },
+  "stats": {
+    "totalTools": 70,
+    "totalCategories": 7,
+    "totalUsers": "50K+",
+    "rating": "4.9"
+  },
+  "theme": {
+    "primaryColor": "#1F1F1F",
+    "accentColor": "#FFD6E0",
+    "fontFamily": "Inter"
+  },
+  "admin": {
+    "username": "admin",
+    "password": "toolverse@2024"
+  },
+  "features": {
+    "search": true,
+    "darkMode": false,
+    "favorites": true,
+    "history": true,
+    "shareButton": true
+  }
+}

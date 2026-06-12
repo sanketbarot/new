@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>AI ToolCor Calculator - 70+ Free Online Calculators & Tools</title>
+    <meta name="title" content="AI ToolCor Calculator - 70+ Free Online Calculators & Tools">
+    <meta name="description" content="Access 70+ free online calculators for EMI, SIP, BMI, GST, Income Tax, GPA and more. Fast, accurate, no signup required.">
+    <meta name="keywords" content="free calculator, emi calculator, sip calculator, bmi calculator, gst calculator, income tax calculator, online tools, ai toolcor calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/">
+    <meta property="og:title" content="AI ToolCor Calculator - 70+ Free Online Calculators">
+    <meta property="og:description" content="70+ free calculators for finance, health, business, math and more.">
+    <meta property="og:image" content="https://calculator.aitoolcor.com/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="AI ToolCor Calculator">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI ToolCor Calculator - Free Online Calculators">
+    <meta name="twitter:description" content="70+ free calculators for finance, health, business, math and more.">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI ToolCor Calculator",
+        "url": "https://calculator.aitoolcor.com",
+        "description": "70+ free online calculators for finance, health, business, math and more."
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/logos/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-wrapper">
+    <div class="bg-grain"></div>
+</div>
+
+<div class="app-frame">
+
+    <!-- ===== SIDEBAR (Fixed Left) ===== -->
+    <aside class="sidebar" id="sidebar">
+        
+        <a href="/" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+
+        <div class="sidebar-section">
+            <button class="nav-btn active" onclick="filterCategory('all')">All Tools</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#finance" class="nav-item active" onclick="filterCategory('finance');return false;">
+                <i class="fa-solid fa-coins"></i>
+                <span>Finance Tools</span>
+                <span class="nav-count">20</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#health" class="nav-item" onclick="filterCategory('health');return false;">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Health Tools</span>
+                <span class="nav-count">10</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#business" class="nav-item" onclick="filterCategory('business');return false;">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Business Tools</span>
+                <span class="nav-count">8</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#daily-use" class="nav-item" onclick="filterCategory('daily-use');return false;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Daily Use</span>
+                <span class="nav-count">10</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#education" class="nav-item" onclick="filterCategory('education');return false;">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Education</span>
+                <span class="nav-count">6</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#math" class="nav-item" onclick="filterCategory('math');return false;">
+                <i class="fa-solid fa-square-root-variable"></i>
+                <span>Math Tools</span>
+                <span class="nav-count">8</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="#utility" class="nav-item" onclick="filterCategory('utility');return false;">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Utility Tools</span>
+                <span class="nav-count">8</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <button class="upgrade-btn" onclick="filterCategory('all')">Explore All</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="searchInput"
+                       placeholder="Search 70+ calculators..."
+                       oninput="handleSearch(this.value)"
+                       autocomplete="off">
+                <span class="search-shortcut">⌘K</span>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="chip" onclick="filterCategory('all')">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="hide-sm">Home</span>
+                </button>
+                <a href="https://aitoolcor.com" target="_blank" rel="noopener noreferrer" class="chip">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span class="hide-sm">AI ToolCor</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Search Results -->
+        <section id="searchResults" style="display:none;">
+            <div class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>Search Results</h2>
+                        <p class="muted" id="searchCount">0 tools found</p>
+                    </div>
+                    <button class="chip-sm" onclick="clearSearch()">
+                        <i class="fa-solid fa-xmark"></i> Clear
+                    </button>
+                </div>
+                <div class="tools-grid" id="searchResultsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Main Sections -->
+        <div id="mainSections">
+
+            <!-- Hero -->
+            <section class="card hero-section">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <span class="eyebrow-pill">✦ 100% Free Forever</span>
+                        <h1 class="hero-title">
+                            Smart Calculators<br>
+                            <span class="serif-italic">for every need</span>
+                        </h1>
+                        <p class="hero-sub">
+                            70+ free online calculators for finance, health, business, math and more. 
+                            No signup. No ads. Just instant results.
+                        </p>
+                        <div class="hero-btns">
+                            <button class="btn-primary" onclick="filterCategory('finance')">
+                                <i class="fa-solid fa-calculator"></i> Finance Tools
+                            </button>
+                            <button class="btn-ghost" onclick="filterCategory('health')">
+                                <i class="fa-solid fa-heart-pulse"></i> Health Tools
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hs-item">
+                            <span class="hs-value">70+</span>
+                            <span class="hs-label">Free Tools</span>
+                        </div>
+                        <div class="hs-divider"></div>
+                        <div class="hs-item">
+                            <span class="hs-value">7</span>
+                            <span class="hs-label">Categories</span>
+                        </div>
+                        <div class="hs-divider"></div>
+                        <div class="hs-item">
+                            <span class="hs-value">50K+</span>
+                            <span class="hs-label">Users</span>
+                        </div>
+                        <div class="hs-divider"></div>
+                        <div class="hs-item">
+                            <span class="hs-value">4.9★</span>
+                            <span class="hs-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Tools -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>🔥 Popular Tools</h2>
+                        <p class="muted">Most used calculators</p>
+                    </div>
+                    <button class="chip-sm" onclick="filterCategory('all')">
+                        View All <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="tools-grid" id="popularToolsGrid"></div>
+            </section>
+
+            <!-- Finance -->
+            <section class="card category-section" id="finance">
+                <div class="card-head">
+                    <div>
+                        <h2>💰 Finance Tools</h2>
+                        <p class="muted">20 calculators for financial planning</p>
+                    </div>
+                    <span class="tag green">20 Tools</span>
+                </div>
+                <div class="tools-grid" id="financeGrid"></div>
+            </section>
+
+            <!-- Health -->
+            <section class="card category-section" id="health">
+                <div class="card-head">
+                    <div>
+                        <h2>❤️ Health Tools</h2>
+                        <p class="muted">10 calculators for health & fitness</p>
+                    </div>
+                    <span class="tag pink">10 Tools</span>
+                </div>
+                <div class="tools-grid" id="healthGrid"></div>
+            </section>
+
+            <!-- Business -->
+            <section class="card category-section" id="business">
+                <div class="card-head">
+                    <div>
+                        <h2>💼 Business Tools</h2>
+                        <p class="muted">8 calculators for business growth</p>
+                    </div>
+                    <span class="tag blue">8 Tools</span>
+                </div>
+                <div class="tools-grid" id="businessGrid"></div>
+            </section>
+
+            <!-- Daily Use -->
+            <section class="card category-section" id="daily-use">
+                <div class="card-head">
+                    <div>
+                        <h2>🪄 Daily Use Tools</h2>
+                        <p class="muted">10 calculators for everyday use</p>
+                    </div>
+                    <span class="tag peach">10 Tools</span>
+                </div>
+                <div class="tools-grid" id="dailyuseGrid"></div>
+            </section>
+
+            <!-- Education -->
+            <section class="card category-section" id="education">
+                <div class="card-head">
+                    <div>
+                        <h2>🎓 Education Tools</h2>
+                        <p class="muted">6 calculators for students</p>
+                    </div>
+                    <span class="tag purple">6 Tools</span>
+                </div>
+                <div class="tools-grid" id="educationGrid"></div>
+            </section>
+
+            <!-- Math -->
+            <section class="card category-section" id="math">
+                <div class="card-head">
+                    <div>
+                        <h2>🔢 Math Tools</h2>
+                        <p class="muted">8 calculators for mathematics</p>
+                    </div>
+                    <span class="tag yellow">8 Tools</span>
+                </div>
+                <div class="tools-grid" id="mathGrid"></div>
+            </section>
+
+            <!-- Utility -->
+            <section class="card category-section" id="utility">
+                <div class="card-head">
+                    <div>
+                        <h2>🛠️ Utility Tools</h2>
+                        <p class="muted">8 tools for everyday utility</p>
+                    </div>
+                    <span class="tag blue">8 Tools</span>
+                </div>
+                <div class="tools-grid" id="utilityGrid"></div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <span>
+                © 2024 
+                <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">
+                    AI ToolCor Calculator
+                </a> — All rights reserved.
+            </span>
+            <nav class="footer-links">
+                <a href="https://aitoolcor.com" target="_blank" rel="noopener noreferrer">AI ToolCor</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Back to Top -->
+<button class="float-btn" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="js/tools-data.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

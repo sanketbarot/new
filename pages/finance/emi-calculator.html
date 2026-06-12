@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - Calculate Loan EMI Online Free | AI ToolCor</title>
+    <meta name="description" content="Calculate your monthly EMI for home loan, car loan or personal loan instantly. Free online EMI calculator with amortization schedule.">
+    <meta name="keywords" content="emi calculator, loan emi calculator, home loan emi, car loan emi, personal loan emi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/emi-calculator.html">
+    <meta property="og:title" content="EMI Calculator | AI ToolCor">
+    <meta property="og:description" content="Calculate monthly EMI for any loan instantly. Free and accurate.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/emi-calculator.html">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"EMI Calculator","url":"https://calculator.aitoolcor.com/pages/finance/emi-calculator.html","description":"Calculate monthly EMI for home, car or personal loans.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <link rel="icon" type="image/x-icon" href="/assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+<div class="app-frame">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div><span class="brand-text">AI ToolCor<sup>CALC</sup></span></div>
+        </div>
+        <div class="sidebar-section">
+            <a href="../../index.html" class="nav-btn">All Tools</a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item active">
+                <i class="fa-solid fa-coins"></i><span>Finance Tools</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../health/" class="nav-item">
+                <i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../business/" class="nav-item">
+                <i class="fa-solid fa-briefcase"></i><span>Business Tools</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../daily-use/" class="nav-item">
+                <i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../education/" class="nav-item">
+                <i class="fa-solid fa-graduation-cap"></i><span>Education</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../math/" class="nav-item">
+                <i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../utility/" class="nav-item">
+                <i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="index.html">Finance</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>EMI Calculator</span>
+            </div>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="hide-sm">Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Tool Layout -->
+        <div class="tool-layout">
+
+            <!-- Calculator Card -->
+            <section class="tool-calculator-card" aria-label="EMI Calculator">
+                <div class="tool-header">
+                    <div class="tool-icon-lg green">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h1 class="tool-title">EMI Calculator</h1>
+                        <p class="tool-sub">Calculate your monthly loan installment</p>
+                    </div>
+                    <span class="tool-badge-pill popular">🔥 Popular</span>
+                </div>
+
+                <!-- Inputs -->
+                <div class="tool-inputs">
+                    <div class="input-group">
+                        <label for="loanAmount">Loan Amount (₹)</label>
+                        <div class="input-wrap">
+                            <span class="input-prefix">₹</span>
+                            <input type="number" id="loanAmount" value="1000000" min="1000" max="100000000" 
+                                   oninput="calculate()" aria-label="Loan Amount">
+                        </div>
+                        <input type="range" id="loanRange" min="100000" max="10000000" 
+                               step="50000" value="1000000" oninput="syncRange('loanAmount','loanRange')" class="range-slider">
+                        <div class="range-labels">
+                            <span>₹1 Lakh</span><span>₹1 Crore</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="interestRate">Interest Rate (% per year)</label>
+                        <div class="input-wrap">
+                            <input type="number" id="interestRate" value="8.5" min="1" max="36" step="0.1"
+                                   oninput="calculate()" aria-label="Interest Rate">
+                            <span class="input-suffix">%</span>
+                        </div>
+                        <input type="range" id="rateRange" min="1" max="36" step="0.1" 
+                               value="8.5" oninput="syncRange('interestRate','rateRange')" class="range-slider">
+                        <div class="range-labels">
+                            <span>1%</span><span>36%</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="loanTenure">Loan Tenure</label>
+                        <div class="tenure-toggle">
+                            <button class="tenure-btn active" id="yearBtn" onclick="setTenureType('year')">Years</button>
+                            <button class="tenure-btn" id="monthBtn" onclick="setTenureType('month')">Months</button>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="number" id="loanTenure" value="20" min="1" max="360"
+                                   oninput="calculate()" aria-label="Loan Tenure">
+                            <span class="input-suffix" id="tenureSuffix">Yrs</span>
+                        </div>
+                        <input type="range" id="tenureRange" min="1" max="30" step="1"
+                               value="20" oninput="syncRange('loanTenure','tenureRange')" class="range-slider">
+                        <div class="range-labels">
+                            <span>1 Yr</span><span>30 Yrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="calc-btn" onclick="calculate()">
+                    <i class="fa-solid fa-calculator"></i> Calculate EMI
+                </button>
+
+                <!-- Result -->
+                <div class="result-box" id="resultBox">
+                    <div class="result-grid">
+                        <div class="result-item highlight">
+                            <span class="result-label">Monthly EMI</span>
+                            <span class="result-value" id="emiResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Principal Amount</span>
+                            <span class="result-value green-text" id="principalResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value red-text" id="interestResult">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Payment</span>
+                            <span class="result-value" id="totalResult">₹0</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Bar -->
+                    <div class="breakdown-bar">
+                        <div class="bar-principal" id="barPrincipal" style="width:50%"></div>
+                        <div class="bar-interest" id="barInterest" style="width:50%"></div>
+                    </div>
+                    <div class="bar-legend">
+                        <span class="legend-item"><span class="legend-dot principal"></span>Principal</span>
+                        <span class="legend-item"><span class="legend-dot interest"></span>Interest</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="tool-actions">
+                    <button class="action-btn" onclick="resetCalculator()">
+                        <i class="fa-solid fa-rotate-left"></i> Reset
+                    </button>
+                    <button class="action-btn" onclick="copyResult()">
+                        <i class="fa-solid fa-copy"></i> Copy
+                    </button>
+                    <button class="action-btn" onclick="shareResult()">
+                        <i class="fa-solid fa-share-nodes"></i> Share
+                    </button>
+                </div>
+            </section>
+
+            <!-- Info + Amortization -->
+            <aside class="tool-info-panel">
+
+                <!-- Formula -->
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-circle-info"></i> EMI Formula</h2>
+                    <div class="formula-box">
+                        <code>EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ - 1)</code>
+                    </div>
+                    <div class="formula-legend">
+                        <p><strong>P</strong> = Principal loan amount</p>
+                        <p><strong>r</strong> = Monthly interest rate</p>
+                        <p><strong>n</strong> = Number of months</p>
+                    </div>
+                </div>
+
+                <!-- Amortization Table -->
+                <div class="info-card">
+                    <div class="info-card-head">
+                        <h2 class="info-title"><i class="fa-solid fa-table"></i> Amortization Schedule</h2>
+                        <button class="chip-sm" onclick="toggleAmortization()">
+                            <span id="amorToggleText">Show</span>
+                        </button>
+                    </div>
+                    <div id="amortizationTable" style="display:none;">
+                        <div class="table-wrapper" style="max-height:320px;overflow-y:auto;">
+                            <table class="data-table" id="amorTable">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>EMI</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="amorBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips -->
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-lightbulb"></i> Smart Tips</h2>
+                    <ul class="tips-list">
+                        <li>Lower interest rate = lower EMI</li>
+                        <li>Longer tenure = lower EMI but more interest</li>
+                        <li>Make prepayments to reduce total interest</li>
+                        <li>Compare loan offers before choosing</li>
+                        <li>EMI should not exceed 40% of income</li>
+                    </ul>
+                </div>
+
+                <!-- Related Tools -->
+                <div class="info-card">
+                    <h2 class="info-title"><i class="fa-solid fa-link"></i> Related Tools</h2>
+                    <div class="related-tools">
+                        <a href="loan-calculator.html" class="related-tool">
+                            <i class="fa-solid fa-money-bill-wave"></i> Loan Calculator
+                        </a>
+                        <a href="sip-calculator.html" class="related-tool">
+                            <i class="fa-solid fa-chart-line"></i> SIP Calculator
+                        </a>
+                        <a href="compound-interest-calculator.html" class="related-tool">
+                            <i class="fa-solid fa-percent"></i> Compound Interest
+                        </a>
+                        <a href="fd-calculator.html" class="related-tool">
+                            <i class="fa-solid fa-piggy-bank"></i> FD Calculator
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;">AI ToolCor Calculator</a>. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="index.html">Finance</a>
+            </div>
+        </footer>
+
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="../../js/category.js"></script>
+<script>
+// ===== EMI CALCULATOR =====
+let tenureType = 'year';
+
+function setTenureType(type) {
+    tenureType = type;
+    const yearBtn = document.getElementById('yearBtn');
+    const monthBtn = document.getElementById('monthBtn');
+    const suffix = document.getElementById('tenureSuffix');
+    const range = document.getElementById('tenureRange');
+
+    if (type === 'year') {
+        yearBtn.classList.add('active');
+        monthBtn.classList.remove('active');
+        suffix.textContent = 'Yrs';
+        range.max = 30;
+        document.getElementById('loanTenure').value = 20;
+        range.value = 20;
+    } else {
+        monthBtn.classList.add('active');
+        yearBtn.classList.remove('active');
+        suffix.textContent = 'Mos';
+        range.max = 360;
+        document.getElementById('loanTenure').value = 240;
+        range.value = 240;
+    }
+    calculate();
+}
+
+function syncRange(inputId, rangeId) {
+    const input = document.getElementById(inputId);
+    const range = document.getElementById(rangeId);
+    input.value = range.value;
+    calculate();
+}
+
+function syncInput(inputId, rangeId) {
+    const input = document.getElementById(inputId);
+    const range = document.getElementById(rangeId);
+    range.value = input.value;
+    calculate();
+}
+
+// Sync inputs with ranges
+document.getElementById('loanAmount').addEventListener('input', function() {
+    document.getElementById('loanRange').value = this.value;
+    calculate();
+});
+document.getElementById('interestRate').addEventListener('input', function() {
+    document.getElementById('rateRange').value = this.value;
+    calculate();
+});
+document.getElementById('loanTenure').addEventListener('input', function() {
+    document.getElementById('tenureRange').value = this.value;
+    calculate();
+});
+
+function calculate() {
+    const P = parseFloat(document.getElementById('loanAmount').value) || 0;
+    const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+    const tenureVal = parseFloat(document.getElementById('loanTenure').value) || 0;
+
+    const n = tenureType === 'year' ? tenureVal * 12 : tenureVal;
+    const r = annualRate / 12 / 100;
+
+    if (P <= 0 || annualRate <= 0 || n <= 0) {
+        document.getElementById('emiResult').textContent = '₹0';
+        return;
+    }
+
+    let emi;
+    if (r === 0) {
+        emi = P / n;
+    } else {
+        emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    }
+
+    const totalPayment = emi * n;
+    const totalInterest = totalPayment - P;
+    const principalPct = (P / totalPayment) * 100;
+    const interestPct = (totalInterest / totalPayment) * 100;
+
+    document.getElementById('emiResult').textContent = formatCurrency(emi);
+    document.getElementById('principalResult').textContent = formatCurrency(P);
+    document.getElementById('interestResult').textContent = formatCurrency(totalInterest);
+    document.getElementById('totalResult').textContent = formatCurrency(totalPayment);
+
+    document.getElementById('barPrincipal').style.width = principalPct.toFixed(1) + '%';
+    document.getElementById('barInterest').style.width = interestPct.toFixed(1) + '%';
+
+    // Build amortization
+    buildAmortization(P, r, emi, n);
+}
+
+function buildAmortization(P, r, emi, n) {
+    const tbody = document.getElementById('amorBody');
+    if (!tbody) return;
+
+    let balance = P;
+    let rows = '';
+    const maxRows = Math.min(n, 360);
+
+    for (let i = 1; i <= maxRows; i++) {
+        const interest = balance * r;
+        const principal = emi - interest;
+        balance = Math.max(0, balance - principal);
+
+        rows += `
+            <tr>
+                <td>${i}</td>
+                <td>${formatCurrency(emi)}</td>
+                <td>${formatCurrency(principal)}</td>
+                <td>${formatCurrency(interest)}</td>
+                <td>${formatCurrency(balance)}</td>
+            </tr>
+        `;
+    }
+    tbody.innerHTML = rows;
+}
+
+function toggleAmortization() {
+    const table = document.getElementById('amortizationTable');
+    const btn = document.getElementById('amorToggleText');
+    if (table.style.display === 'none') {
+        table.style.display = 'block';
+        btn.textContent = 'Hide';
+    } else {
+        table.style.display = 'none';
+        btn.textContent = 'Show';
+    }
+}
+
+function formatCurrency(amount) {
+    return '₹' + Math.round(amount).toLocaleString('en-IN');
+}
+
+function resetCalculator() {
+    document.getElementById('loanAmount').value = 1000000;
+    document.getElementById('loanRange').value = 1000000;
+    document.getElementById('interestRate').value = 8.5;
+    document.getElementById('rateRange').value = 8.5;
+    document.getElementById('loanTenure').value = 20;
+    document.getElementById('tenureRange').value = 20;
+    tenureType = 'year';
+    document.getElementById('yearBtn').classList.add('active');
+    document.getElementById('monthBtn').classList.remove('active');
+    document.getElementById('tenureSuffix').textContent = 'Yrs';
+    calculate();
+}
+
+function copyResult() {
+    const emi = document.getElementById('emiResult').textContent;
+    const principal = document.getElementById('principalResult').textContent;
+    const interest = document.getElementById('interestResult').textContent;
+    const total = document.getElementById('totalResult').textContent;
+    const text = `EMI Calculator Results:\nMonthly EMI: ${emi}\nPrincipal: ${principal}\nTotal Interest: ${interest}\nTotal Payment: ${total}\n\nCalculated at calculator.aitoolcor.com`;
+    navigator.clipboard.writeText(text).then(() => showToast('Results copied!')).catch(() => showToast('Copy failed'));
+}
+
+function shareResult() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'EMI Calculator - AI ToolCor',
+            text: `Monthly EMI: ${document.getElementById('emiResult').textContent}`,
+            url: window.location.href
+        }).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied!'));
+    }
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, 2500);
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('show');
+    document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function () {
+    const btn = document.querySelector('.float-btn');
+    if (btn) {
+        btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        btn.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+    }
+}, { passive: true });
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+    calculate();
+    const btn = document.querySelector('.float-btn');
+    if (btn) { btn.style.opacity = '0'; btn.style.transition = 'opacity 0.3s'; }
+});
+</script>
+</body>
+</html>

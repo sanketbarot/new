@@ -6,93 +6,93 @@
     <!-- Homepage -->
     <url>
         <loc>https://calculator.aitoolcor.com/</loc>
-        <lastmod>2025-01-15</lastmod>
+        <lastmod>2026-06-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- ===== FINANCE TOOLS (20) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/emi-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/sip-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/lumpsum-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/gst-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/income-tax-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/fd-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/rd-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/ppf-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/nps-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/epf-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/hra-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/gratuity-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/compound-interest-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/simple-interest-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/loan-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/discount-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/inflation-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/retirement-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/mutual-fund-returns-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/finance/credit-card-interest-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/emi-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/sip-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/lumpsum-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/gst-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/income-tax-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/fd-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/rd-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/ppf-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/nps-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/epf-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/hra-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/gratuity-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/compound-interest-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/simple-interest-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/loan-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/discount-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/inflation-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/retirement-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/mutual-fund-returns-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/finance/credit-card-interest-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== HEALTH TOOLS (10) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/health/bmi-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/bmr-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/calories-burned-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/water-intake-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/body-fat-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/ideal-weight-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/pregnancy-due-date-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/ovulation-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/macro-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/health/heart-rate-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/bmi-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/bmr-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/calories-burned-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/water-intake-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/body-fat-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/ideal-weight-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/pregnancy-due-date-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/ovulation-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/macro-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/health/heart-rate-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== BUSINESS TOOLS (8) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/business/profit-margin-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/salary-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/roi-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/break-even-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/markup-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/cagr-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/sales-tax-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/business/freelance-rate-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/profit-margin-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/salary-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/roi-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/break-even-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/markup-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/cagr-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/sales-tax-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/business/freelance-rate-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== DAILY USE TOOLS (10) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/age-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/percentage-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/date-difference-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/tip-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/time-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/unit-converter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/fuel-cost-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/mileage-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/speed-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/cooking-converter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/age-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/percentage-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/date-difference-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/tip-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/time-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/unit-converter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/fuel-cost-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/mileage-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/speed-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/daily-use/cooking-converter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== EDUCATION TOOLS (6) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/education/gpa-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/education/cgpa-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/education/marks-percentage-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/education/grade-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/education/attendance-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/education/exam-score-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/gpa-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/cgpa-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/marks-percentage-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/grade-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/attendance-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/education/exam-score-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== MATH TOOLS (8) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/math/scientific-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/fraction-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/lcm-hcf-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/square-root-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/power-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/logarithm-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/quadratic-equation-solver.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/math/probability-calculator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/scientific-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/fraction-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/lcm-hcf-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/square-root-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/power-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/logarithm-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/quadratic-equation-solver.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/math/probability-calculator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- ===== UTILITY TOOLS (8) ===== -->
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/password-generator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/random-number-generator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/word-counter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/character-counter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/currency-converter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/time-zone-converter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/qr-code-generator.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calculator.aitoolcor.com/pages/utility/color-code-converter.html</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/password-generator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/random-number-generator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/word-counter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/character-counter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/currency-converter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/time-zone-converter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/qr-code-generator.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://calculator.aitoolcor.com/pages/utility/color-code-converter.html</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

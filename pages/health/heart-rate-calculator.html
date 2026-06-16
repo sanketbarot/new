@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Rate Calculator - Target Heart Rate Zones | AI ToolCor</title>
+    <meta name="description" content="Free Heart Rate Calculator to find your max heart rate, resting heart rate, and 5 target zones for fat burn, cardio, and peak performance.">
+    <meta name="keywords" content="heart rate calculator, max heart rate, target heart rate, fat burn zone, cardio zone">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/health/heart-rate-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Heart Rate Calculator">
+    <meta property="og:description" content="Find your target heart rate zones.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item active"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#health">Health</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Heart Rate</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon pink"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Heart Rate</span> Calculator</h1>
+                <p>Find your target heart rate zones for exercise</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-user"></i> Your Details</h2><p class="muted">Enter info</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hrAge"><i class="fa-solid fa-cake-candles"></i> Age (Years)</label>
+                    <input type="number" id="hrAge" class="form-input" value="30" min="10" max="100">
+                    <input type="range" id="hrAgeRange" class="range-input" min="15" max="80" step="1" value="30">
+                    <div class="range-labels"><span>15</span><span>80</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hrResting"><i class="fa-solid fa-bed"></i> Resting Heart Rate (Optional)</label>
+                    <input type="number" id="hrResting" class="form-input" value="70" min="40" max="120">
+                    <small class="form-hint">Measure first thing in morning. Avg: 60-100 bpm</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="hrFormula"><i class="fa-solid fa-calculator"></i> Formula</label>
+                    <select id="hrFormula" class="form-input">
+                        <option value="tanaka" selected>Tanaka (208 - 0.7 × age) - Most Accurate</option>
+                        <option value="fox">Fox (220 - age) - Traditional</option>
+                        <option value="gulati">Gulati (Women only)</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateHR()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetHR()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-heart-pulse"></i> Heart Rate Zones</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Max Heart Rate</span>
+                    <span class="result-main-value" id="hrMax">187 bpm</span>
+                    <span class="result-main-sub">Maximum during exercise</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Resting</span>
+                        <span class="quick-value" id="hrRestingDisp">70 bpm</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">HR Reserve</span>
+                        <span class="quick-value" id="hrReserve">117 bpm</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>🎯 Target Heart Rate Zones</h3>
+                    <div id="hrZones"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Training Insight</h3>
+                    <p id="hrInsight">🏃 For fat burning, aim for Zone 2 (60-70% max HR). For cardio endurance, Zone 3-4 (70-85%).</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyHR()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareHR()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's max heart rate?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Maximum Heart Rate (MHR)</strong> is the highest bpm your heart can achieve during exhaustive exercise. Formula: Tanaka = 208 - (0.7 × age).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What are HR zones?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>5 zones based on % of MHR:<br>• <strong>Zone 1 (50-60%):</strong> Very light/Warm-up<br>• <strong>Zone 2 (60-70%):</strong> Fat burn<br>• <strong>Zone 3 (70-80%):</strong> Cardio<br>• <strong>Zone 4 (80-90%):</strong> Hard<br>• <strong>Zone 5 (90-100%):</strong> Peak</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to measure resting HR?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Measure <strong>first thing in morning</strong> before getting out of bed. Count pulse at wrist for 60 seconds. Normal: 60-100 bpm. Athletes: 40-60 bpm.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Best zone for fat loss?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Zone 2 (60-70%)</strong> burns highest % from fat. But <strong>Zone 3-4</strong> burns more total calories. Mix both for best results!</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#health">Health</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="heart-rate-calculator.js"></script>
+
+</body>
+</html>

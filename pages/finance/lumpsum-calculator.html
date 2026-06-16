@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumpsum Calculator - Free One-Time Investment Calculator | AI ToolCor</title>
+    <meta name="description" content="Free Lumpsum Calculator to calculate returns on one-time investments. Find maturity amount, total returns and wealth gain instantly.">
+    <meta name="keywords" content="lumpsum calculator, one time investment calculator, lumpsum returns, mutual fund lumpsum">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/lumpsum-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lumpsum Calculator - Calculate One-Time Investment Returns">
+    <meta property="og:description" content="Calculate returns on lumpsum investments instantly. Free & accurate.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/lumpsum-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Lumpsum Calculator",
+        "description": "Free online lumpsum calculator for one-time investments.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section">
+            <a href="../../index.html" class="nav-btn">All Tools</a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active">
+                <i class="fa-solid fa-coins"></i><span>Finance Tools</span>
+                <span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#health" class="nav-item">
+                <i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span>
+                <span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#business" class="nav-item">
+                <i class="fa-solid fa-briefcase"></i><span>Business Tools</span>
+                <span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#daily-use" class="nav-item">
+                <i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span>
+                <span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#education" class="nav-item">
+                <i class="fa-solid fa-graduation-cap"></i><span>Education</span>
+                <span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#math" class="nav-item">
+                <i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span>
+                <span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="../../index.html#utility" class="nav-item">
+                <i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span>
+                <span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Lumpsum Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-coins"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Lumpsum</span> Calculator</h1>
+                <p>Calculate returns on one-time lumpsum investments</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> Investment Details</h2>
+                    <p class="muted">Enter investment information</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lumpsumAmount"><i class="fa-solid fa-indian-rupee-sign"></i> Investment Amount (₹)</label>
+                    <input type="number" id="lumpsumAmount" class="form-input" value="100000" min="1000" max="100000000">
+                    <input type="range" id="lumpsumAmountRange" class="range-input" min="10000" max="10000000" step="10000" value="100000">
+                    <div class="range-labels"><span>₹10K</span><span>₹1Cr</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lumpsumRate"><i class="fa-solid fa-percent"></i> Expected Return (% p.a.)</label>
+                    <input type="number" id="lumpsumRate" class="form-input" value="12" min="1" max="30" step="0.5">
+                    <input type="range" id="lumpsumRateRange" class="range-input" min="1" max="30" step="0.5" value="12">
+                    <div class="range-labels"><span>1%</span><span>30%</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lumpsumYears"><i class="fa-solid fa-calendar"></i> Time Period (Years)</label>
+                    <input type="number" id="lumpsumYears" class="form-input" value="10" min="1" max="40">
+                    <input type="range" id="lumpsumYearsRange" class="range-input" min="1" max="40" step="1" value="10">
+                    <div class="range-labels"><span>1 Yr</span><span>40 Yrs</span></div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateLumpsum()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetLumpsum()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> Investment Result</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Maturity Value</span>
+                    <span class="result-main-value" id="lumpsumMaturity">₹3,10,585</span>
+                    <span class="result-main-sub">After 10 years</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Invested</span>
+                        <span class="quick-value" id="lumpsumInvested">₹1,00,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Gains</span>
+                        <span class="quick-value" id="lumpsumGains">₹2,10,585</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Composition</h3>
+                    <div class="chart-bar">
+                        <div class="bar-principal" id="lumpsumBarInv" style="width:32%;"><span>Invested</span></div>
+                        <div class="bar-interest" id="lumpsumBarGain" style="width:68%;"><span>Gains</span></div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color principal"></span>
+                            <div><span class="legend-label">Investment</span><span class="legend-value" id="lumpsumLegInv">₹1,00,000 (32%)</span></div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color interest"></span>
+                            <div><span class="legend-label">Returns</span><span class="legend-value" id="lumpsumLegGain">₹2,10,585 (68%)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Insight</h3>
+                    <p id="lumpsumInsight">Your ₹1,00,000 will grow 3.1x in 10 years!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyLumpsum()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareLumpsum()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2><p class="muted">You might also like</p></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2><p class="muted">Common questions</p></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is Lumpsum investment?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Lumpsum investment</strong> means investing a large amount of money in one go, rather than spreading it over time like SIP.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How is Lumpsum return calculated?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Formula: <strong>A = P × (1 + r/n)^(nt)</strong> where A = future value, P = principal, r = annual rate, n = compounds per year, t = years.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Lumpsum vs SIP - which is better?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Lumpsum</strong> works best in bullish markets. <strong>SIP</strong> is better for volatile markets due to rupee cost averaging.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's the ideal tenure for Lumpsum?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Minimum <strong>5-7 years</strong> recommended for equity mutual funds. Longer tenure benefits from power of compounding.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../index.html#finance">Finance</a>
+            </nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="lumpsum-calculator.js"></script>
+
+</body>
+</html>

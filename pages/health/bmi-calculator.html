@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Free Body Mass Index Calculator | AI ToolCor</title>
+    <meta name="description" content="Free BMI Calculator to check Body Mass Index. Calculate BMI for adults & kids. Find healthy weight range with BMI chart instantly.">
+    <meta name="keywords" content="bmi calculator, body mass index, ideal weight, bmi chart, healthy weight calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/health/bmi-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BMI Calculator - Free Body Mass Index">
+    <meta property="og:description" content="Calculate your BMI and check healthy weight range.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item active"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#health">Health</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">BMI Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon pink"><i class="fa-solid fa-weight-scale"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">BMI</span> Calculator</h1>
+                <p>Check your Body Mass Index & healthy weight range</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-user"></i> Your Details</h2><p class="muted">Enter your measurements</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-toggle-on"></i> Unit System</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setBmiUnit('metric', event)" type="button">Metric (cm, kg)</button>
+                        <button class="gst-btn" onclick="setBmiUnit('imperial', event)" type="button">Imperial (ft, lb)</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setBmiGender('male', event)" type="button">♂ Male</button>
+                        <button class="gst-btn" onclick="setBmiGender('female', event)" type="button">♀ Female</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmiAge"><i class="fa-solid fa-cake-candles"></i> Age (Years)</label>
+                    <input type="number" id="bmiAge" class="form-input" value="25" min="2" max="120">
+                </div>
+
+                <div id="metricInputs">
+                    <div class="form-group">
+                        <label for="bmiHeight"><i class="fa-solid fa-ruler-vertical"></i> Height (cm)</label>
+                        <input type="number" id="bmiHeight" class="form-input" value="170" min="50" max="250" step="0.1">
+                        <input type="range" id="bmiHeightRange" class="range-input" min="100" max="220" step="1" value="170">
+                        <div class="range-labels"><span>100 cm</span><span>220 cm</span></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bmiWeight"><i class="fa-solid fa-weight-hanging"></i> Weight (kg)</label>
+                        <input type="number" id="bmiWeight" class="form-input" value="70" min="10" max="300" step="0.1">
+                        <input type="range" id="bmiWeightRange" class="range-input" min="30" max="200" step="0.5" value="70">
+                        <div class="range-labels"><span>30 kg</span><span>200 kg</span></div>
+                    </div>
+                </div>
+
+                <div id="imperialInputs" style="display:none;">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label><i class="fa-solid fa-ruler-vertical"></i> Feet</label>
+                            <input type="number" id="bmiFeet" class="form-input" value="5" min="1" max="8">
+                        </div>
+                        <div class="form-field">
+                            <label>Inches</label>
+                            <input type="number" id="bmiInches" class="form-input" value="7" min="0" max="11">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-weight-hanging"></i> Weight (lbs)</label>
+                        <input type="number" id="bmiLbs" class="form-input" value="155" min="20" max="600">
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateBMI()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetBMI()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> Your BMI</h2></div>
+
+                <div class="result-main-display" id="bmiMainDisplay">
+                    <span class="result-main-label">Your BMI</span>
+                    <span class="result-main-value" id="bmiValue">24.2</span>
+                    <span class="result-main-sub" id="bmiCategory">Normal Weight</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Status</span>
+                        <span class="quick-value small" id="bmiStatus">Healthy</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Ideal Weight</span>
+                        <span class="quick-value small" id="bmiIdeal">53-72 kg</span>
+                    </div>
+                </div>
+
+                <!-- BMI Scale -->
+                <div class="breakdown-card">
+                    <h3>📊 BMI Scale</h3>
+                    <div class="bmi-scale">
+                        <div class="bmi-scale-bar">
+                            <div class="bmi-scale-marker" id="bmiMarker" style="left:50%;">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="bmi-scale-segment underweight" style="width:25%;">
+                                <span>Under</span>
+                                <small>&lt;18.5</small>
+                            </div>
+                            <div class="bmi-scale-segment normal" style="width:25%;">
+                                <span>Normal</span>
+                                <small>18.5-25</small>
+                            </div>
+                            <div class="bmi-scale-segment overweight" style="width:25%;">
+                                <span>Over</span>
+                                <small>25-30</small>
+                            </div>
+                            <div class="bmi-scale-segment obese" style="width:25%;">
+                                <span>Obese</span>
+                                <small>&gt;30</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📋 BMI Categories</h3>
+                    <div id="bmiCategoriesList"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Health Insight</h3>
+                    <p id="bmiInsight">✅ Your BMI is in normal range. Keep maintaining a healthy lifestyle!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyBMI()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareBMI()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is BMI?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Body Mass Index (BMI)</strong> is a measure of body fat based on height and weight. Used to categorize underweight, normal, overweight, and obesity.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to calculate BMI?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>BMI = Weight (kg) / Height² (m²)</strong><br>Example: 70 kg / (1.7m × 1.7m) = 24.2</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What are BMI categories?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>• <strong>Under 18.5:</strong> Underweight<br>• <strong>18.5 - 24.9:</strong> Normal weight<br>• <strong>25 - 29.9:</strong> Overweight<br>• <strong>30+:</strong> Obese</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Is BMI accurate?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>BMI is a <strong>general indicator</strong>. It doesn't account for muscle mass, bone density, age, gender. Athletes may have high BMI but low body fat. Consult doctor for accurate assessment.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#health">Health</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="bmi-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator - Basal Metabolic Rate Calculator | AI ToolCor</title>
+    <meta name="description" content="Free BMR Calculator to calculate Basal Metabolic Rate. Find daily calorie needs using Mifflin-St Jeor formula based on activity level.">
+    <meta name="keywords" content="bmr calculator, basal metabolic rate, daily calorie needs, mifflin st jeor">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/health/bmr-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BMR Calculator - Daily Calorie Needs">
+    <meta property="og:description" content="Calculate your BMR and daily calorie requirements.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item active"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#health">Health</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">BMR Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon pink"><i class="fa-solid fa-fire"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">BMR</span> Calculator</h1>
+                <p>Calculate Basal Metabolic Rate & daily calorie needs</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-user"></i> Your Details</h2><p class="muted">Enter your information</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setBmrGender('male', event)" type="button">♂ Male</button>
+                        <button class="gst-btn" onclick="setBmrGender('female', event)" type="button">♀ Female</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmrAge"><i class="fa-solid fa-cake-candles"></i> Age (Years)</label>
+                    <input type="number" id="bmrAge" class="form-input" value="25" min="10" max="100">
+                    <input type="range" id="bmrAgeRange" class="range-input" min="15" max="80" step="1" value="25">
+                    <div class="range-labels"><span>15</span><span>80</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmrHeight"><i class="fa-solid fa-ruler-vertical"></i> Height (cm)</label>
+                    <input type="number" id="bmrHeight" class="form-input" value="170" min="100" max="250">
+                    <input type="range" id="bmrHeightRange" class="range-input" min="100" max="220" step="1" value="170">
+                    <div class="range-labels"><span>100 cm</span><span>220 cm</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmrWeight"><i class="fa-solid fa-weight-hanging"></i> Weight (kg)</label>
+                    <input type="number" id="bmrWeight" class="form-input" value="70" min="20" max="300">
+                    <input type="range" id="bmrWeightRange" class="range-input" min="30" max="200" step="0.5" value="70">
+                    <div class="range-labels"><span>30 kg</span><span>200 kg</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmrActivity"><i class="fa-solid fa-person-running"></i> Activity Level</label>
+                    <select id="bmrActivity" class="form-input">
+                        <option value="1.2">Sedentary (little exercise)</option>
+                        <option value="1.375">Light (1-3 days/week)</option>
+                        <option value="1.55" selected>Moderate (3-5 days/week)</option>
+                        <option value="1.725">Active (6-7 days/week)</option>
+                        <option value="1.9">Very Active (athlete/physical job)</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateBMR()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetBMR()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-fire"></i> Your Metabolism</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Daily Calorie Needs (TDEE)</span>
+                    <span class="result-main-value" id="bmrTDEE">2,556</span>
+                    <span class="result-main-sub">calories per day</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">BMR</span>
+                        <span class="quick-value" id="bmrValue">1,649</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Active Calories</span>
+                        <span class="quick-value" id="bmrActive">907</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>🎯 Calorie Goals</h3>
+                    <div id="bmrGoals"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 BMR Insight</h3>
+                    <p id="bmrInsight">Your body burns 1,649 calories at rest. With moderate activity, you need 2,556 calories daily.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyBMR()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareBMR()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is BMR?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Basal Metabolic Rate (BMR)</strong> is the calories your body burns at complete rest to maintain basic functions like breathing, circulation, and cell production.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is TDEE?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Total Daily Energy Expenditure (TDEE)</strong> = BMR × Activity Multiplier. It's the total calories you burn including all activities.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How accurate is BMR formula?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>The <strong>Mifflin-St Jeor formula</strong> is most accurate (within 10%). Actual BMR varies based on muscle mass, genetics, and health conditions.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to lose/gain weight?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Weight Loss:</strong> Eat 500 cal less than TDEE (loses 0.5kg/week)<br><strong>Weight Gain:</strong> Eat 500 cal more than TDEE<br><strong>Maintenance:</strong> Eat exactly your TDEE</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#health">Health</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="bmr-calculator.js"></script>
+
+</body>
+</html>

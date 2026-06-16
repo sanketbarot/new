@@ -1,0 +1,9 @@
+# AI ToolCor Calculator - ads.txt
+# Authorized sellers for advertising
+
+# Google AdSense (replace with your publisher ID)
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Add other authorized sellers here
+# Example:
+# adsense.com, pub-1234567890, RESELLER, abc123

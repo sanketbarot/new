@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator FY 2025-26 - Tax Free up to ₹12L | AI ToolCor</title>
+    <meta name="description" content="Free Income Tax Calculator for FY 2025-26. New regime tax-free up to ₹12L income. Old regime up to ₹5L. Calculate tax under both regimes instantly.">
+    <meta name="keywords" content="income tax calculator 2025, tax calculator india fy 2025-26, new regime 12 lakh tax free, tax slabs 2025">
+
+
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/income-tax-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Income Tax Calculator FY 2025-26 - Old vs New Regime">
+    <meta property="og:description" content="Calculate income tax for FY 2025-26 under old & new regime. Free & accurate.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/income-tax-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Income Tax Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-file-invoice"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Income Tax</span> Calculator</h1>
+                <p>Calculate tax for FY 2025-26 • Zero tax up to ₹12L (New Regime)</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> Income Details</h2><p class="muted">Enter your income</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-toggle-on"></i> Tax Regime</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setRegime('new', event)" type="button">New Regime</button>
+                        <button class="gst-btn" onclick="setRegime('old', event)" type="button">Old Regime</button>
+                    </div>
+                    <small class="form-hint" id="regimeHint">New regime with lower tax rates</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="annualIncome"><i class="fa-solid fa-indian-rupee-sign"></i> Annual Income (₹)</label>
+                    <input type="number" id="annualIncome" class="form-input" value="800000" min="0" step="10000">
+                </div>
+
+                <div class="form-group" id="deductionsGroup">
+                    <label for="deductions"><i class="fa-solid fa-minus-circle"></i> Deductions (80C, 80D, etc.) (₹)</label>
+                    <input type="number" id="deductions" class="form-input" value="150000" min="0" step="10000">
+                    <small class="form-hint">Only for Old Regime</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="ageGroup"><i class="fa-solid fa-user"></i> Age Group</label>
+                    <select id="ageGroup" class="form-input">
+                        <option value="below60">Below 60 years</option>
+                        <option value="60to80">60-80 years (Senior)</option>
+                        <option value="above80">Above 80 years (Super Senior)</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateTax()"><i class="fa-solid fa-calculator"></i> Calculate Tax</button>
+                    <button class="btn-reset" onclick="resetTax()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-receipt"></i> Tax Calculation</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total Tax Payable</span>
+                    <span class="result-main-value" id="totalTax">₹35,000</span>
+                    <span class="result-main-sub" id="taxSub">For FY 2024-25 (New Regime)</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Taxable Income</span>
+                        <span class="quick-value" id="taxableIncome">₹8,00,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Effective Rate</span>
+                        <span class="quick-value" id="effectiveRate">4.4%</span>
+                    </div>
+                </div>
+
+                <div class="result-quick" style="grid-template-columns: 1fr 1fr;">
+                    <div class="quick-item">
+                        <span class="quick-label">Income Tax</span>
+                        <span class="quick-value small" id="incomeTax">₹35,000</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="quick-label">Cess (4%)</span>
+                        <span class="quick-value small" id="cessAmt">₹1,400</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Tax Breakdown</h3>
+                    <div id="taxBreakdown"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Tax Tip</h3>
+                    <p id="taxInsight">For income up to ₹7L in new regime, you get full rebate (zero tax) under section 87A!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyTax()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareTax()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2><p class="muted">You might also like</p></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+    <div class="card-head"><div><h2>❓ FAQs</h2><p class="muted">Tax related questions FY 2025-26</p></div></div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What are new tax slabs for FY 2025-26?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>New Regime FY 2025-26:</strong><br>
+                ₹0 - ₹4L: <strong>0%</strong><br>
+                ₹4L - ₹8L: <strong>5%</strong><br>
+                ₹8L - ₹12L: <strong>10%</strong><br>
+                ₹12L - ₹16L: <strong>15%</strong><br>
+                ₹16L - ₹20L: <strong>20%</strong><br>
+                ₹20L - ₹24L: <strong>25%</strong><br>
+                Above ₹24L: <strong>30%</strong></p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Is income up to ₹12 Lakh tax-free?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Yes!</strong> Under new tax regime FY 2025-26, income up to <strong>₹12 Lakh</strong> is completely tax-free thanks to enhanced Section 87A rebate of ₹60,000.<br><br>
+                For <strong>salaried individuals</strong>, this effective limit becomes <strong>₹12.75 Lakh</strong> after standard deduction of ₹75,000.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Old Regime vs New Regime?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Old Regime (Tax-free up to ₹7L with deductions):</strong><br>
+                • Higher rates but deductions allowed<br>
+                • 80C (₹1.5L), 80D (Health Ins.), HRA, LTA, etc.<br>
+                • Standard deduction ₹50,000<br><br>
+                <strong>New Regime (Tax-free up to ₹12L):</strong><br>
+                • Lower rates, simpler structure<br>
+                • Only standard deduction (₹75,000)<br>
+                • Default option from FY 2023-24</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What is Section 87A Rebate?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>New Regime:</strong> Rebate up to ₹60,000 for income up to ₹12L. Makes tax = ₹0<br>
+                <strong>Old Regime:</strong> Rebate up to ₹12,500 for income up to ₹5L. Makes tax = ₹0<br><br>
+                This means if your income is within these limits, you pay <strong>ZERO tax</strong>!</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What is Health & Education Cess?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>4% Cess</strong> is applied on the income tax amount. It funds health and education initiatives across India. Applicable in both old and new regimes.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What deductions can I claim in Old Regime?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Common deductions in <strong>Old Regime</strong>:<br>
+                • <strong>80C</strong>: Up to ₹1.5L (PPF, ELSS, LIC, Home loan principal)<br>
+                • <strong>80D</strong>: Health insurance (₹25K-₹1L)<br>
+                • <strong>80E</strong>: Education loan interest<br>
+                • <strong>80G</strong>: Donations<br>
+                • <strong>HRA</strong>: House Rent Allowance<br>
+                • <strong>LTA</strong>: Leave Travel Allowance<br>
+                • Home loan interest up to ₹2L</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Which regime should I choose?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Choose New Regime if:</strong><br>
+                • Income up to ₹12L (zero tax!)<br>
+                • Few or no deductions to claim<br>
+                • Want simple tax calculation<br><br>
+                <strong>Choose Old Regime if:</strong><br>
+                • Have major deductions (₹2L+)<br>
+                • Home loan, HRA, 80C investments<br>
+                • Higher income with deductions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../index.html#finance">Finance</a>
+            </nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="income-tax-calculator.js"></script>
+
+</body>
+</html>

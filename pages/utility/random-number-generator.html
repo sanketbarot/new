@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator - Free Online | AI ToolCor</title>
+    <meta name="description" content="Free Random Number Generator. Generate random numbers in any range. Single or multiple numbers, with or without duplicates.">
+    <keywords name="keywords" content="random number generator, random numbers, lottery numbers, dice roll">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/utility/random-number-generator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Random Number Generator">
+    <meta property="og:description" content="Generate random numbers easily.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item active"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#utility">Utility</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Random Number</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon blue"><i class="fa-solid fa-dice"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Random Number</span> Generator</h1>
+                <p>Generate random numbers in any range</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> Settings</h2><p class="muted">Configure range</p></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>Min</label>
+                        <input type="number" id="rngMin" class="form-input" value="1">
+                    </div>
+                    <div class="form-field">
+                        <label>Max</label>
+                        <input type="number" id="rngMax" class="form-input" value="100">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rngCount"><i class="fa-solid fa-list-ol"></i> How Many Numbers?</label>
+                    <input type="number" id="rngCount" class="form-input" value="1" min="1" max="1000">
+                </div>
+
+                <div class="form-group">
+                    <label style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--bg-soft);border-radius:var(--r-sm);cursor:pointer;">
+                        <input type="checkbox" id="rngUnique"> Unique numbers only (no duplicates)
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--bg-soft);border-radius:var(--r-sm);cursor:pointer;">
+                        <input type="checkbox" id="rngSorted"> Sort results
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-bolt"></i> Quick Presets</label>
+                    <div class="gst-rates">
+                        <button class="gst-rate-btn" onclick="setRng(1,6,1)" type="button">🎲 Die</button>
+                        <button class="gst-rate-btn" onclick="setRng(1,100,1)" type="button">1-100</button>
+                        <button class="gst-rate-btn" onclick="setRng(1,49,6)" type="button">Lottery</button>
+                        <button class="gst-rate-btn" onclick="setRng(1,2,1)" type="button">🪙 Coin</button>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="generateRandom()"><i class="fa-solid fa-shuffle"></i> Generate</button>
+                    <button class="btn-reset" onclick="resetRng()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-dice"></i> Results</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Random Number(s)</span>
+                    <span class="result-main-value" id="rngResult" style="font-size:32px;">42</span>
+                    <span class="result-main-sub" id="rngSub">Between 1 and 100</span>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Statistics</h3>
+                    <div id="rngStats"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Info</h3>
+                    <p id="rngInsight">🎲 Generated using crypto-secure random number generator.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyRng()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="generateRandom()"><i class="fa-solid fa-shuffle"></i> New</button>
+                    <button class="action-btn" onclick="shareRng()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Common uses?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>• Lottery numbers<br>• Picking winners<br>• Dice rolls<br>• Random sampling<br>• Games<br>• Decision making</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Truly random?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Uses browser's <strong>cryptographically secure random</strong>. Suitable for most use cases including games and randomized selections.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#utility">Utility</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="random-number-generator.js"></script>
+
+</body>
+</html>

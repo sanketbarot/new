@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator - Free GST Tax Calculator Online | AI ToolCor</title>
+    <meta name="description" content="Free GST Calculator to calculate GST amount, CGST, SGST, IGST. Add or remove GST from any amount. Supports 5%, 12%, 18%, 28% GST rates.">
+    <meta name="keywords" content="gst calculator, gst tax calculator, cgst sgst calculator, gst amount, gst inclusive exclusive">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/gst-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GST Calculator - Calculate GST Tax Online">
+    <meta property="og:description" content="Calculate GST amount, CGST, SGST, IGST instantly. Free GST calculator.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/gst-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GST Calculator",
+        "description": "Free online GST calculator for India - calculate GST, CGST, SGST, IGST.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">GST Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-receipt"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">GST</span> Calculator</h1>
+                <p>Calculate GST amount, CGST, SGST and IGST with ease</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> GST Details</h2><p class="muted">Enter amount and rate</p></div>
+                </div>
+
+                <!-- GST Type Toggle -->
+                <div class="form-group">
+                    <label><i class="fa-solid fa-toggle-on"></i> Calculation Type</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setGSTType('exclusive', event)" type="button">Add GST</button>
+                        <button class="gst-btn" onclick="setGSTType('inclusive', event)" type="button">Remove GST</button>
+                    </div>
+                    <small class="form-hint" id="gstTypeHint">Add GST to base amount</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="gstAmount"><i class="fa-solid fa-indian-rupee-sign"></i> Amount (₹)</label>
+                    <input type="number" id="gstAmount" class="form-input" value="1000" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="gstRate"><i class="fa-solid fa-percent"></i> GST Rate (%)</label>
+                    <div class="gst-rates">
+                        <button class="gst-rate-btn" onclick="setGSTRate(5)" type="button">5%</button>
+                        <button class="gst-rate-btn active" onclick="setGSTRate(18)" type="button">18%</button>
+                        <button class="gst-rate-btn" onclick="setGSTRate(12)" type="button">12%</button>
+                        <button class="gst-rate-btn" onclick="setGSTRate(28)" type="button">28%</button>
+                    </div>
+                    <input type="number" id="gstRate" class="form-input" value="18" min="0" max="100" step="0.1" style="margin-top: 8px;">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateGST()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetGST()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-receipt"></i> GST Breakdown</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total Amount</span>
+                    <span class="result-main-value" id="gstTotal">₹1,180</span>
+                    <span class="result-main-sub" id="gstTotalSub">Including GST @ 18%</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Base Amount</span>
+                        <span class="quick-value" id="gstBase">₹1,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">GST Amount</span>
+                        <span class="quick-value" id="gstAmt">₹180</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Tax Split</h3>
+                    <div class="gst-split">
+                        <div class="gst-split-item">
+                            <span class="gst-split-label">CGST (Central)</span>
+                            <span class="gst-split-value" id="cgstAmt">₹90</span>
+                            <span class="gst-split-pct" id="cgstPct">9%</span>
+                        </div>
+                        <div class="gst-split-item">
+                            <span class="gst-split-label">SGST (State)</span>
+                            <span class="gst-split-value" id="sgstAmt">₹90</span>
+                            <span class="gst-split-pct" id="sgstPct">9%</span>
+                        </div>
+                        <div class="gst-split-item igst">
+                            <span class="gst-split-label">IGST (Interstate)</span>
+                            <span class="gst-split-value" id="igstAmt">₹180</span>
+                            <span class="gst-split-pct" id="igstPct">18%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 GST Info</h3>
+                    <p id="gstInsight">GST of ₹180 (18%) is added to ₹1,000. For intrastate, split as CGST + SGST. For interstate, full amount is IGST.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyGST()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareGST()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2><p class="muted">You might also like</p></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2><p class="muted">Common GST questions</p></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is GST?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>GST (Goods and Services Tax)</strong> is a single indirect tax for the entire country on supply of goods and services. It replaced multiple cascading taxes.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What are GST rates in India?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>India has <strong>4 GST slabs: 5%, 12%, 18%, and 28%</strong>. Essential items are exempt (0%), and luxury items may have additional cess.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is CGST, SGST, and IGST?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>CGST</strong> = Central GST<br><strong>SGST</strong> = State GST<br><strong>IGST</strong> = Integrated GST<br>Intrastate: CGST + SGST (50-50 split). Interstate: Full IGST.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to calculate GST?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Add GST:</strong> Amount + (Amount × GST%/100)<br><strong>Remove GST:</strong> Amount / (1 + GST%/100)</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../index.html#finance">Finance</a>
+            </nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="gst-calculator.js"></script>
+
+</body>
+</html>

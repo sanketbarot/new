@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator - Take Home Salary Calculator India | AI ToolCor</title>
+    <meta name="description" content="Free Salary Calculator India to calculate take-home salary from CTC. Includes EPF, professional tax, income tax deductions. FY 2025-26.">
+    <meta name="keywords" content="salary calculator, take home salary, ctc calculator, in hand salary, salary calculator india">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/business/salary-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Salary Calculator - Take Home India">
+    <meta property="og:description" content="Calculate take-home salary from CTC.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item active"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#business">Business</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Salary Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon blue"><i class="fa-solid fa-money-check"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Salary</span> Calculator</h1>
+                <p>Calculate take-home salary from CTC (India 2025-26)</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-calculator"></i> Salary Details</h2><p class="muted">Enter your CTC</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="salCTC"><i class="fa-solid fa-indian-rupee-sign"></i> Annual CTC (₹)</label>
+                    <input type="number" id="salCTC" class="form-input" value="1000000" min="100000">
+                    <input type="range" id="salCTCRange" class="range-input" min="200000" max="5000000" step="50000" value="1000000">
+                    <div class="range-labels"><span>₹2L</span><span>₹50L</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="salBonus"><i class="fa-solid fa-gift"></i> Bonus (₹) (Optional)</label>
+                    <input type="number" id="salBonus" class="form-input" value="50000" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-toggle-on"></i> Tax Regime</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setSalRegime('new', event)" type="button">New Regime</button>
+                        <button class="gst-btn" onclick="setSalRegime('old', event)" type="button">Old Regime</button>
+                    </div>
+                </div>
+
+                <div class="form-group" id="salDeductionsGroup" style="display:none;">
+                    <label for="salDeductions"><i class="fa-solid fa-minus"></i> 80C+80D Deductions (₹)</label>
+                    <input type="number" id="salDeductions" class="form-input" value="150000" min="0" max="500000">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateSalary()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetSalary()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-wallet"></i> Take Home</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Monthly Take-Home</span>
+                    <span class="result-main-value" id="salMonthly">₹74,167</span>
+                    <span class="result-main-sub" id="salAnnualSub">₹8,90,000/year</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Gross Monthly</span>
+                        <span class="quick-value" id="salGrossMonthly">₹87,500</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Total Deductions</span>
+                        <span class="quick-value" id="salDeductionsTotal">₹13,333</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Salary Breakdown (Annual)</h3>
+                    <div id="salBreakdown"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Salary Insight</h3>
+                    <p id="salInsight">📊 Take-home ratio is 84% of gross. Good salary structure with optimal deductions!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copySalary()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareSalary()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>CTC vs Take-home salary?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>CTC (Cost to Company):</strong> Total annual package including all benefits<br><strong>Gross Salary:</strong> CTC - Employer EPF - Gratuity<br><strong>Take-home:</strong> Gross - EPF (employee) - Tax - PT</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's included in CTC?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>CTC includes:<br>• <strong>Basic Salary</strong> (40-50%)<br>• <strong>HRA</strong> (40-50% of basic)<br>• <strong>Special Allowance</strong><br>• <strong>EPF</strong> (12% basic each)<br>• <strong>Gratuity</strong> (4.81% basic)<br>• <strong>Bonus, Insurance, etc.</strong></p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Standard deductions?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Monthly deductions:</strong><br>• EPF: 12% of basic<br>• Income Tax (TDS)<br>• Professional Tax: ₹200/month<br>• Health insurance (if applicable)<br><br><strong>Standard Deduction:</strong> ₹75K (New) / ₹50K (Old)</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to maximize take-home?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>1. Choose <strong>New Regime</strong> (zero tax up to ₹12L)<br>2. Optimize <strong>HRA structure</strong><br>3. Get <strong>NPS</strong> employer contribution<br>4. Use <strong>tax-free reimbursements</strong> (LTA, fuel, etc.)<br>5. <strong>80C investments</strong> (Old regime)</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#business">Business</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="salary-calculator.js"></script>
+
+</body>
+</html>

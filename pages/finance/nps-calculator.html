@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPS Calculator - Free National Pension Scheme Calculator | AI ToolCor</title>
+    <meta name="description" content="Free NPS Calculator to calculate National Pension Scheme returns, pension amount and corpus. Plan your retirement with NPS tax benefits up to ₹2 Lakh.">
+    <meta name="keywords" content="nps calculator, national pension scheme calculator, nps pension calculator, nps tax benefit, retirement calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/nps-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NPS Calculator - National Pension Scheme">
+    <meta property="og:description" content="Calculate NPS returns, monthly pension and tax benefits. Free retirement planning calculator.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/nps-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">NPS Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-umbrella"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">NPS</span> Calculator</h1>
+                <p>Calculate National Pension Scheme corpus & monthly pension</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> NPS Details</h2><p class="muted">Plan your retirement</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="npsAge"><i class="fa-solid fa-user"></i> Current Age</label>
+                    <input type="number" id="npsAge" class="form-input" value="30" min="18" max="60">
+                    <input type="range" id="npsAgeRange" class="range-input" min="18" max="60" step="1" value="30">
+                    <div class="range-labels"><span>18</span><span>60</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="npsMonthly"><i class="fa-solid fa-indian-rupee-sign"></i> Monthly Investment (₹)</label>
+                    <input type="number" id="npsMonthly" class="form-input" value="5000" min="500" max="500000">
+                    <input type="range" id="npsMonthlyRange" class="range-input" min="500" max="100000" step="500" value="5000">
+                    <div class="range-labels"><span>₹500</span><span>₹1L</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="npsRate"><i class="fa-solid fa-percent"></i> Expected Return (% p.a.)</label>
+                    <input type="number" id="npsRate" class="form-input" value="10" min="6" max="15" step="0.5">
+                    <input type="range" id="npsRateRange" class="range-input" min="6" max="15" step="0.5" value="10">
+                    <div class="range-labels"><span>6%</span><span>15%</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="npsAnnuity"><i class="fa-solid fa-percent"></i> Annuity Purchase (%)</label>
+                    <input type="number" id="npsAnnuity" class="form-input" value="40" min="40" max="100" step="5">
+                    <input type="range" id="npsAnnuityRange" class="range-input" min="40" max="100" step="5" value="40">
+                    <div class="range-labels"><span>40% (Min)</span><span>100%</span></div>
+                    <small class="form-hint">Minimum 40% required for monthly pension</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="npsAnnuityRate"><i class="fa-solid fa-percent"></i> Annuity Rate (% p.a.)</label>
+                    <input type="number" id="npsAnnuityRate" class="form-input" value="6" min="4" max="10" step="0.5">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateNPS()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetNPS()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> Retirement Plan</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total Corpus at 60</span>
+                    <span class="result-main-value" id="npsCorpus">₹1,15,68,212</span>
+                    <span class="result-main-sub" id="npsCorpusSub">In 30 years</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Invested</span>
+                        <span class="quick-value" id="npsInvested">₹18,00,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Returns</span>
+                        <span class="quick-value" id="npsReturns">₹97,68,212</span>
+                    </div>
+                </div>
+
+                <div class="result-quick" style="grid-template-columns: 1fr 1fr;">
+                    <div class="quick-item">
+                        <span class="quick-label">Lump Sum (60%)</span>
+                        <span class="quick-value small" id="npsLumpSum">₹69,40,927</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="quick-label">Annuity (40%)</span>
+                        <span class="quick-value small" id="npsAnnuityAmt">₹46,27,285</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>💰 Monthly Pension</h3>
+                    <div style="background:var(--bg-soft);padding:18px;border-radius:var(--r-md);text-align:center;">
+                        <span style="font-size:12px;color:var(--gray-500);font-weight:600;text-transform:uppercase;">After Retirement</span>
+                        <div style="font-size:32px;font-weight:800;color:var(--ink);margin:8px 0;" id="npsMonthlyPension">₹23,136</div>
+                        <span style="font-size:13px;color:var(--gray-700);" id="npsPensionDesc">Lifetime monthly pension</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 NPS Insight</h3>
+                    <p id="npsInsight">🎯 Excellent! Your NPS will create ₹1.15 Cr corpus + ₹23K monthly pension. Tax benefit ₹2L under 80C+80CCD!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyNPS()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareNPS()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is NPS?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>National Pension Scheme (NPS)</strong> is a government-backed retirement savings scheme. Open to all Indian citizens aged 18-70. Creates retirement corpus + monthly pension.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What are NPS tax benefits?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>NPS offers <strong>triple tax benefits</strong>:<br>• 80C: ₹1.5L deduction<br>• 80CCD(1B): Additional ₹50K<br>• 80CCD(2): Employer contribution<br><strong>Total: Up to ₹2 Lakh tax benefit!</strong></p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is Annuity in NPS?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>At retirement, <strong>min 40% of corpus must be used to buy annuity</strong> for monthly pension. Remaining 60% can be withdrawn as lump sum (tax-free).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What returns does NPS give?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>NPS historically gives <strong>9-12% annual returns</strong> based on asset allocation (Equity, Corporate Bonds, Govt Securities). You can choose conservative or aggressive funds.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#finance">Finance</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="nps-calculator.js"></script>
+
+</body>
+</html>

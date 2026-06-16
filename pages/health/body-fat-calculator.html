@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Calculator - Free Body Fat % Calculator | AI ToolCor</title>
+    <meta name="description" content="Free Body Fat Calculator using US Navy method. Calculate body fat percentage, lean mass and fitness category instantly.">
+    <meta name="keywords" content="body fat calculator, body fat percentage, lean mass calculator, navy method body fat">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/health/body-fat-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Body Fat Calculator">
+    <meta property="og:description" content="Calculate body fat percentage instantly.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item active"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#health">Health</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Body Fat</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon pink"><i class="fa-solid fa-dumbbell"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Body Fat</span> Calculator</h1>
+                <p>Calculate body fat % using US Navy method</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-user"></i> Measurements</h2><p class="muted">Enter body measurements</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                    <div class="gst-toggle">
+                        <button class="gst-btn active" onclick="setBfGender('male', event)" type="button">♂ Male</button>
+                        <button class="gst-btn" onclick="setBfGender('female', event)" type="button">♀ Female</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bfHeight"><i class="fa-solid fa-ruler-vertical"></i> Height (cm)</label>
+                    <input type="number" id="bfHeight" class="form-input" value="170" min="100" max="250">
+                    <input type="range" id="bfHeightRange" class="range-input" min="100" max="220" step="1" value="170">
+                    <div class="range-labels"><span>100 cm</span><span>220 cm</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bfWeight"><i class="fa-solid fa-weight-hanging"></i> Weight (kg)</label>
+                    <input type="number" id="bfWeight" class="form-input" value="70" min="20" max="300">
+                    <input type="range" id="bfWeightRange" class="range-input" min="30" max="200" step="0.5" value="70">
+                    <div class="range-labels"><span>30 kg</span><span>200 kg</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bfNeck"><i class="fa-solid fa-ruler"></i> Neck Circumference (cm)</label>
+                    <input type="number" id="bfNeck" class="form-input" value="38" min="20" max="80" step="0.5">
+                    <small class="form-hint">Measure around middle of neck</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="bfWaist"><i class="fa-solid fa-ruler"></i> Waist Circumference (cm)</label>
+                    <input type="number" id="bfWaist" class="form-input" value="85" min="40" max="200" step="0.5">
+                    <small class="form-hint">At navel level</small>
+                </div>
+
+                <div class="form-group" id="hipGroup" style="display:none;">
+                    <label for="bfHip"><i class="fa-solid fa-ruler"></i> Hip Circumference (cm)</label>
+                    <input type="number" id="bfHip" class="form-input" value="95" min="50" max="200" step="0.5">
+                    <small class="form-hint">Widest part of hips (female only)</small>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateBodyFat()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetBodyFat()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> Body Composition</h2></div>
+
+                <div class="result-main-display" id="bfMainDisplay">
+                    <span class="result-main-label">Body Fat Percentage</span>
+                    <span class="result-main-value" id="bfPercent">18.5%</span>
+                    <span class="result-main-sub" id="bfCategory">Fitness</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Body Fat Mass</span>
+                        <span class="quick-value" id="bfFatMass">13.0 kg</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Lean Body Mass</span>
+                        <span class="quick-value" id="bfLeanMass">57.0 kg</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Body Fat Categories</h3>
+                    <div id="bfCategoriesList"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Body Composition Insight</h3>
+                    <p id="bfInsight">✅ Your body fat is in fitness range. Good muscle-fat ratio!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyBodyFat()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareBodyFat()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is body fat percentage?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Body fat percentage</strong> is the proportion of your body composed of fat. More accurate than BMI for assessing fitness as it distinguishes fat from muscle.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's healthy body fat range?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Men:</strong><br>• Athletes: 6-13%<br>• Fitness: 14-17%<br>• Average: 18-24%<br>• Obese: 25%+<br><br><strong>Women:</strong><br>• Athletes: 14-20%<br>• Fitness: 21-24%<br>• Average: 25-31%<br>• Obese: 32%+</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to measure correctly?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>• <strong>Neck:</strong> Below larynx (Adam's apple)<br>• <strong>Waist:</strong> Narrowest point (above navel for men, at navel for women)<br>• <strong>Hip:</strong> Widest part of hips (women only)<br>Use flexible measuring tape, don't pull tight!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to reduce body fat?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>1. <strong>Caloric deficit</strong> (eat less than you burn)<br>2. <strong>Strength training</strong> (build muscle)<br>3. <strong>Cardio exercise</strong> (HIIT, running)<br>4. <strong>High protein diet</strong> (preserves muscle)<br>5. <strong>Adequate sleep</strong> (7-9 hours)</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#health">Health</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="body-fat-calculator.js"></script>
+
+</body>
+</html>

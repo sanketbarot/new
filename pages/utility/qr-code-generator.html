@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Free Online | AI ToolCor</title>
+    <meta name="description" content="Free QR Code Generator. Create QR codes for URLs, text, WiFi, email, phone. Download as PNG. Customizable size and colors.">
+    <keywords name="keywords" content="qr code generator, qr code maker, free qr code, wifi qr code">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/utility/qr-code-generator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="QR Code Generator">
+    <meta property="og:description" content="Generate QR codes instantly.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item active"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#utility">Utility</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">QR Code</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon blue"><i class="fa-solid fa-qrcode"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">QR Code</span> Generator</h1>
+                <p>Generate QR codes for URLs, text, WiFi, and more</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-pen"></i> QR Content</h2><p class="muted">Enter data</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="qrType"><i class="fa-solid fa-list"></i> Type</label>
+                    <select id="qrType" class="form-input" onchange="changeQrType()">
+                        <option value="url" selected>🌐 URL/Website</option>
+                        <option value="text">📝 Plain Text</option>
+                        <option value="email">📧 Email</option>
+                        <option value="phone">📞 Phone Number</option>
+                        <option value="sms">💬 SMS</option>
+                        <option value="wifi">📶 WiFi</option>
+                    </select>
+                </div>
+
+                <div id="qrUrlInputs">
+                    <div class="form-group">
+                        <label for="qrUrl"><i class="fa-solid fa-link"></i> URL</label>
+                        <input type="url" id="qrUrl" class="form-input" value="https://calculator.aitoolcor.com" placeholder="https://example.com">
+                    </div>
+                </div>
+
+                <div id="qrTextInputs" style="display:none;">
+                    <div class="form-group">
+                        <label for="qrText"><i class="fa-solid fa-font"></i> Text</label>
+                        <textarea id="qrText" class="form-input" rows="3" placeholder="Enter any text...">Hello, World!</textarea>
+                    </div>
+                </div>
+
+                <div id="qrEmailInputs" style="display:none;">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="qrEmail" class="form-input" value="hello@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" id="qrEmailSubject" class="form-input" placeholder="Email subject">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="qrEmailBody" class="form-input" rows="2" placeholder="Email body"></textarea>
+                    </div>
+                </div>
+
+                <div id="qrPhoneInputs" style="display:none;">
+                    <div class="form-group">
+                        <label>Phone Number (with country code)</label>
+                        <input type="tel" id="qrPhone" class="form-input" value="9876543210" placeholder="XXXXXXXXXX">
+                    </div>
+                </div>
+
+                <div id="qrSmsInputs" style="display:none;">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="qrSmsNumber" class="form-input" placeholder="+91XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="qrSmsBody" class="form-input" rows="2" placeholder="SMS message"></textarea>
+                    </div>
+                </div>
+
+                <div id="qrWifiInputs" style="display:none;">
+                    <div class="form-group">
+                        <label>WiFi Name (SSID)</label>
+                        <input type="text" id="qrWifiName" class="form-input" placeholder="WiFi Network Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" id="qrWifiPass" class="form-input" placeholder="WiFi Password">
+                    </div>
+                    <div class="form-group">
+                        <label>Encryption</label>
+                        <select id="qrWifiType" class="form-input">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">No Password</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="qrSize"><i class="fa-solid fa-expand"></i> Size: <strong id="qrSizeDisp">300</strong>px</label>
+                    <input type="range" id="qrSize" class="range-input" min="100" max="500" step="50" value="300">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="generateQR()"><i class="fa-solid fa-qrcode"></i> Generate</button>
+                    <button class="btn-reset" onclick="resetQR()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-qrcode"></i> Your QR Code</h2></div>
+
+                <div style="background:white;padding:20px;border-radius:var(--r-md);text-align:center;border:2px solid var(--border-line);margin-bottom:16px;">
+                    <img id="qrImage" src="" alt="QR Code" style="max-width:100%;height:auto;">
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 QR Info</h3>
+                    <div id="qrInfo"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Tips</h3>
+                    <p id="qrInsight">📱 Scan with any phone camera. Test before printing!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="downloadQR()"><i class="fa-solid fa-download"></i> Download</button>
+                    <button class="action-btn" onclick="copyQRLink()"><i class="fa-solid fa-copy"></i> Copy Link</button>
+                    <button class="action-btn" onclick="shareQR()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is QR code?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>QR (Quick Response) code</strong> is a 2D barcode that can store URLs, text, contact info. Scan with phone camera to access content instantly.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Common QR code uses?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>• <strong>Payments:</strong> UPI, PayPal<br>• <strong>WiFi sharing</strong><br>• <strong>Restaurant menus</strong><br>• <strong>Business cards</strong><br>• <strong>Event tickets</strong><br>• <strong>Product info</strong></p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How to scan QR code?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Open <strong>camera app</strong> on smartphone and point at QR code. Tap notification that appears. Works on most modern phones.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Are these QR codes private?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>QR codes are generated using <strong>public API</strong>. The data you enter is sent to QR Server API for image creation. For sensitive data, use offline QR generators.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#utility">Utility</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="qr-code-generator.js"></script>
+
+</body>
+</html>

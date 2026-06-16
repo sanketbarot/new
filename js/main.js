@@ -2,6 +2,28 @@
 // AI ToolCor Calculator - Homepage JS
 // ================================================
 
+'use strict';
+
+// ===== Get Tools (with admin overrides) =====
+function getActiveTools() {
+    let tools = ALL_TOOLS;
+    
+    // Check if admin made changes (saved in localStorage)
+    const savedTools = localStorage.getItem('aitoolcor_tools_data');
+    if (savedTools) {
+        try {
+            tools = JSON.parse(savedTools);
+            console.log('📦 Using admin-managed tools');
+        } catch (e) {
+            console.error('Failed to load saved tools, using defaults');
+            tools = ALL_TOOLS;
+        }
+    }
+    
+    // ✅ Filter out inactive tools
+    return tools.filter(t => t.active !== false);
+}
+
 // ===== Render Homepage =====
 function renderHomepage() {
     console.log('🔄 Rendering homepage...');
@@ -11,15 +33,19 @@ function renderHomepage() {
         return;
     }
 
-    // Popular Tools
+    // Get active tools (filtered)
+    const activeTools = getActiveTools();
+    console.log(`✅ Active tools: ${activeTools.length}/${ALL_TOOLS.length}`);
+
+    // Popular Tools (only active)
     const popularGrid = document.getElementById('popularToolsGrid');
     if (popularGrid) {
-        const popular = getPopularTools();
+        const popular = activeTools.filter(t => t.popular);
         popularGrid.innerHTML = popular.map(toolCardHTML).join('');
         console.log(`✅ Popular: ${popular.length} tools`);
     }
 
-    // Category Grids
+    // Category Grids (only active)
     const catGrids = {
         'finance':   'financeGrid',
         'health':    'healthGrid',
@@ -33,11 +59,43 @@ function renderHomepage() {
     Object.entries(catGrids).forEach(([cat, gridId]) => {
         const el = document.getElementById(gridId);
         if (el) {
-            const tools = getToolsByCategory(cat);
+            const tools = activeTools.filter(t => t.cat === cat);
             el.innerHTML = tools.map(toolCardHTML).join('');
             console.log(`✅ ${cat}: ${tools.length} tools`);
+            
+            // Update count in nav if exists
+            updateCategoryCount(cat, tools.length);
         }
     });
+    
+    // Update total stats in hero
+    updateHeroStats(activeTools);
+}
+
+// ===== Update Category Count in Nav =====
+function updateCategoryCount(cat, count) {
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        if (item.getAttribute('href') === '#' + cat) {
+            const countEl = item.querySelector('.nav-count');
+            if (countEl) countEl.textContent = count;
+        }
+    });
+    
+    // Update section tag counts
+    const section = document.getElementById(cat);
+    if (section) {
+        const tag = section.querySelector('.tag');
+        if (tag) tag.textContent = `${count} Tools`;
+    }
+}
+
+// ===== Update Hero Stats =====
+function updateHeroStats(activeTools) {
+    const hsItems = document.querySelectorAll('.hs-value');
+    if (hsItems.length >= 1 && hsItems[0]) {
+        hsItems[0].textContent = activeTools.length + '+';
+    }
 }
 
 // ===== Search Functionality =====
@@ -58,7 +116,14 @@ function handleSearch(val) {
             return;
         }
 
-        const results = searchTools(q);
+        // Search only active tools
+        const activeTools = getActiveTools();
+        const lowerQ = q.toLowerCase();
+        const results = activeTools.filter(t =>
+            t.name.toLowerCase().includes(lowerQ) ||
+            t.desc.toLowerCase().includes(lowerQ) ||
+            t.cat.toLowerCase().includes(lowerQ)
+        );
 
         if (searchSection) searchSection.style.display = 'block';
         if (mainSections)  mainSections.style.display  = 'none';
@@ -97,13 +162,12 @@ function filterCategory(cat) {
 
     if (cat === 'all') {
         scrollToTop();
-        updateActiveNav('finance'); // Default to first
+        updateActiveNav('finance');
         return;
     }
 
     updateActiveNav(cat);
 
-    // Scroll to section
     const section = document.getElementById(cat);
     if (section) {
         setTimeout(() => {
@@ -142,46 +206,39 @@ function closeSidebar() {
     document.body.style.overflow = '';
 }
 
-// ===== Scroll Functions =====
+// ===== Scroll =====
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== Scroll Spy - Update Active Nav on Scroll =====
+// ===== Scroll Spy =====
 function initScrollSpy() {
     const sections = document.querySelectorAll('.category-section');
     if (!sections.length) return;
-
-    let scrollTimer = null;
+    
     window.addEventListener('scroll', function () {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-            let current = '';
-            sections.forEach(s => {
-                const rect = s.getBoundingClientRect();
-                if (rect.top <= 200 && rect.bottom >= 200) {
-                    current = s.id;
-                }
-            });
-            if (current) updateActiveNav(current);
-        }, 50);
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 150) {
+                current = s.id;
+            }
+        });
+        if (current) updateActiveNav(current);
     }, { passive: true });
 }
 
-// ===== Float Button - Back to Top =====
+// ===== Float Btn =====
 function initFloatBtn() {
     const btn = document.querySelector('.float-btn');
     if (!btn) return;
-    
     window.addEventListener('scroll', function () {
         btn.classList.toggle('visible', window.scrollY > 400);
     }, { passive: true });
 }
 
-// ===== Keyboard Shortcuts =====
+// ===== Keyboard =====
 function initKeyboard() {
     document.addEventListener('keydown', function (e) {
-        // Ctrl/Cmd + K = focus search
         if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
             e.preventDefault();
             const input = document.getElementById('searchInput');
@@ -190,16 +247,12 @@ function initKeyboard() {
                 input.select();
             }
         }
-        
-        // Escape = clear search & close sidebar
         if (e.key === 'Escape') {
             clearSearch();
             closeSidebar();
             const input = document.getElementById('searchInput');
             if (input) input.blur();
         }
-        
-        // / = focus search
         if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
             e.preventDefault();
             const input = document.getElementById('searchInput');
@@ -208,9 +261,8 @@ function initKeyboard() {
     });
 }
 
-// ===== Smooth Hash Navigation =====
+// ===== Hash Navigation =====
 function initHashNavigation() {
-    // Handle initial hash on page load
     if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         setTimeout(() => {
@@ -223,16 +275,13 @@ function initHashNavigation() {
         }, 200);
     }
 
-    // Handle hash changes
     window.addEventListener('hashchange', function() {
         const hash = window.location.hash.substring(1);
-        if (hash) {
-            filterCategory(hash);
-        }
+        if (hash) filterCategory(hash);
     });
 }
 
-// ===== Click Outside to Close Sidebar =====
+// ===== Click Outside Closes Sidebar =====
 function initOutsideClick() {
     document.addEventListener('click', function(e) {
         const sidebar = document.getElementById('sidebar');
@@ -246,40 +295,48 @@ function initOutsideClick() {
     });
 }
 
-// ===== Initialize Everything =====
+// ===== Listen for Admin Changes =====
+function listenForAdminChanges() {
+    // Re-render if localStorage changes (in another tab)
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'aitoolcor_tools_data') {
+            console.log('🔄 Admin made changes, refreshing...');
+            renderHomepage();
+        }
+    });
+}
+
+// ===== Initialize =====
 function init() {
     console.log('🚀 AI ToolCor Calculator - Initializing...');
     
-    // Check if data loaded
     if (typeof ALL_TOOLS === 'undefined') {
         console.error('❌ ALL_TOOLS not loaded! Check js/tools-data.js path');
         return;
     }
     
-    // Render content
     renderHomepage();
-    
-    // Initialize features
     initScrollSpy();
     initFloatBtn();
     initKeyboard();
     initHashNavigation();
     initOutsideClick();
+    listenForAdminChanges();
     
     console.log(`✅ Ready! Total tools: ${ALL_TOOLS.length}`);
 }
 
-// ===== Run on DOM Ready =====
+// ===== Make Functions Global =====
+window.handleSearch = handleSearch;
+window.clearSearch = clearSearch;
+window.filterCategory = filterCategory;
+window.toggleSidebar = toggleSidebar;
+window.closeSidebar = closeSidebar;
+window.scrollToTop = scrollToTop;
+
+// ===== Run =====
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
-}
-
-// ===== Service Worker Registration (Optional for PWA) =====
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment to enable PWA
-        // navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW failed:', err));
-    });
 }

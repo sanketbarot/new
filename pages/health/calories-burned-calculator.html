@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Burned Calculator - Exercise Calories | AI ToolCor</title>
+    <meta name="description" content="Free Calories Burned Calculator for exercises. Calculate calories burned in walking, running, cycling, swimming, gym workouts using MET values.">
+    <meta name="keywords" content="calories burned, exercise calories, workout calculator, MET calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/health/calories-burned-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calories Burned Calculator">
+    <meta property="og:description" content="Calculate calories burned during any exercise.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item active"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#health">Health</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Calories Burned</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon pink"><i class="fa-solid fa-person-running"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Calories</span> Burned</h1>
+                <p>Calculate calories burned during exercise</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-dumbbell"></i> Exercise Details</h2><p class="muted">Choose activity</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="calActivity"><i class="fa-solid fa-running"></i> Activity Type</label>
+                    <select id="calActivity" class="form-input">
+                        <optgroup label="🚶 Walking/Running">
+                            <option value="3.5">Walking (slow, 4 km/h)</option>
+                            <option value="5">Walking (brisk, 6 km/h)</option>
+                            <option value="8">Jogging (8 km/h)</option>
+                            <option value="11.5">Running (11 km/h)</option>
+                            <option value="14">Running (fast, 14 km/h)</option>
+                        </optgroup>
+                        <optgroup label="🚴 Cycling">
+                            <option value="6">Cycling (leisure, 16 km/h)</option>
+                            <option value="8" selected>Cycling (moderate, 20 km/h)</option>
+                            <option value="12">Cycling (fast, 25+ km/h)</option>
+                        </optgroup>
+                        <optgroup label="🏊 Swimming">
+                            <option value="5.8">Swimming (leisure)</option>
+                            <option value="8.3">Swimming (moderate)</option>
+                            <option value="10">Swimming (vigorous)</option>
+                        </optgroup>
+                        <optgroup label="🏋️ Gym">
+                            <option value="3.5">Weight lifting (light)</option>
+                            <option value="6">Weight lifting (vigorous)</option>
+                            <option value="8">CrossFit</option>
+                            <option value="7">HIIT workout</option>
+                        </optgroup>
+                        <optgroup label="🧘 Other">
+                            <option value="3">Yoga</option>
+                            <option value="4">Pilates</option>
+                            <option value="7.5">Dancing</option>
+                            <option value="8">Hiking</option>
+                            <option value="6">Football</option>
+                            <option value="7">Basketball</option>
+                            <option value="5">Tennis</option>
+                            <option value="4.5">Cricket</option>
+                            <option value="6">Badminton</option>
+                            <option value="3">Stretching</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calWeight"><i class="fa-solid fa-weight-hanging"></i> Your Weight (kg)</label>
+                    <input type="number" id="calWeight" class="form-input" value="70" min="20" max="300">
+                    <input type="range" id="calWeightRange" class="range-input" min="30" max="150" step="0.5" value="70">
+                    <div class="range-labels"><span>30 kg</span><span>150 kg</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="calDuration"><i class="fa-solid fa-clock"></i> Duration (Minutes)</label>
+                    <input type="number" id="calDuration" class="form-input" value="30" min="1" max="480">
+                    <input type="range" id="calDurationRange" class="range-input" min="5" max="180" step="5" value="30">
+                    <div class="range-labels"><span>5 min</span><span>3 hr</span></div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateCalories()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetCalories()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-fire"></i> Calories Burned</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total Calories Burned</span>
+                    <span class="result-main-value" id="calBurned">280</span>
+                    <span class="result-main-sub" id="calBurnedSub">In 30 minutes</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Per Minute</span>
+                        <span class="quick-value" id="calPerMin">9.3</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">MET Value</span>
+                        <span class="quick-value" id="calMET">8.0</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>🍔 Food Equivalent</h3>
+                    <div id="calFoodEquiv"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Exercise Insight</h3>
+                    <p id="calInsight">🔥 Great workout! You burned 280 calories - equivalent to a slice of pizza!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyCalories()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareCalories()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is MET?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Metabolic Equivalent of Task (MET)</strong> is the ratio of work metabolic rate to resting metabolic rate. 1 MET = calories burned at rest. Higher MET = more intense.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How are calories burned calculated?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Calories = MET × Weight (kg) × Time (hours)</strong><br>Example: Running (8 MET) for 30 min, 70 kg = 8 × 70 × 0.5 = 280 calories</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Best exercise for weight loss?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>High calorie burn:</strong> Running, HIIT, Swimming, Cycling<br><strong>Sustainable:</strong> Walking, Yoga, Strength training<br>Best: Mix of cardio + strength + consistency</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How much exercise do I need?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>WHO recommends:</strong><br>• 150-300 min moderate exercise per week<br>• OR 75-150 min vigorous exercise per week<br>• Plus strength training 2+ days/week</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#health">Health</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="calories-burned-calculator.js"></script>
+
+</body>
+</html>

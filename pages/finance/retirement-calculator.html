@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator - Plan Your Retirement Corpus | AI ToolCor</title>
+    <meta name="description" content="Free Retirement Calculator to plan your retirement corpus, monthly savings needed and post-retirement income. Calculate with inflation adjustment.">
+    <meta name="keywords" content="retirement calculator, retirement planning, corpus calculator, retirement savings, pension calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/retirement-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Retirement Calculator - Plan Your Future">
+    <meta property="og:description" content="Calculate retirement corpus needed and monthly savings.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Retirement Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-chair"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Retirement</span> Calculator</h1>
+                <p>Plan your retirement corpus & monthly savings needed</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> Retirement Plan</h2><p class="muted">Enter your details</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retCurrentAge"><i class="fa-solid fa-user"></i> Current Age</label>
+                    <input type="number" id="retCurrentAge" class="form-input" value="30" min="18" max="65">
+                    <input type="range" id="retCurrentAgeRange" class="range-input" min="18" max="65" step="1" value="30">
+                    <div class="range-labels"><span>18</span><span>65</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retAge"><i class="fa-solid fa-flag-checkered"></i> Retirement Age</label>
+                    <input type="number" id="retAge" class="form-input" value="60" min="40" max="80">
+                    <input type="range" id="retAgeRange" class="range-input" min="40" max="80" step="1" value="60">
+                    <div class="range-labels"><span>40</span><span>80</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retMonthly"><i class="fa-solid fa-indian-rupee-sign"></i> Monthly Expenses Today (₹)</label>
+                    <input type="number" id="retMonthly" class="form-input" value="50000" min="1000">
+                    <input type="range" id="retMonthlyRange" class="range-input" min="10000" max="500000" step="1000" value="50000">
+                    <div class="range-labels"><span>₹10K</span><span>₹5L</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="retInflation"><i class="fa-solid fa-arrow-trend-up"></i> Inflation Rate (% p.a.)</label>
+                    <input type="number" id="retInflation" class="form-input" value="6" min="1" max="15" step="0.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="retReturn"><i class="fa-solid fa-percent"></i> Expected Return (% p.a.)</label>
+                    <input type="number" id="retReturn" class="form-input" value="12" min="1" max="30" step="0.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="retLifeExp"><i class="fa-solid fa-heart"></i> Life Expectancy (Years)</label>
+                    <input type="number" id="retLifeExp" class="form-input" value="80" min="60" max="100">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateRetirement()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetRetirement()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> Retirement Plan</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Retirement Corpus Needed</span>
+                    <span class="result-main-value" id="retCorpus">₹4,82,57,000</span>
+                    <span class="result-main-sub" id="retCorpusSub">At age 60</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Monthly SIP Needed</span>
+                        <span class="quick-value" id="retSIP">₹13,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Years to Save</span>
+                        <span class="quick-value" id="retYears">30</span>
+                    </div>
+                </div>
+
+                <div class="result-quick" style="grid-template-columns: 1fr 1fr;">
+                    <div class="quick-item">
+                        <span class="quick-label">Future Monthly Need</span>
+                        <span class="quick-value small" id="retFutureNeed">₹2,87,175</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="quick-label">Years Post-Retire</span>
+                        <span class="quick-value small" id="retPostYears">20</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Retirement Plan Summary</h3>
+                    <div id="retBreakdown"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Retirement Insight</h3>
+                    <p id="retInsight">🎯 Start SIP of ₹13,000/month now to retire comfortably at 60 with ₹4.8 Cr corpus!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyRet()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareRet()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How much do I need to retire?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Rule of thumb: <strong>25-30x your annual expenses</strong>. If you spend ₹6L/year, need ₹1.5-1.8 Cr corpus. Adjust for inflation!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>When should I start retirement planning?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>As early as possible!</strong> Starting at 25 vs 35 makes huge difference due to compounding. Even small amounts compound to large corpus over 30+ years.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Best instruments for retirement?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Mix of:</strong><br>• <strong>Equity Mutual Funds</strong> (60-70%): SIP for long-term<br>• <strong>PPF</strong> (10-15%): Tax-free<br>• <strong>NPS</strong> (10-15%): Tax benefits<br>• <strong>EPF</strong> (auto deduction)<br>• <strong>Debt funds/FD</strong> for safety</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's the 4% rule?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>You can <strong>withdraw 4% annually</strong> from retirement corpus without depleting it. ₹1 Cr corpus = ₹4L/year safe withdrawal.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#finance">Finance</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="retirement-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Manage Categories - Admin Panel | AI ToolCor</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+
+    <!-- ===== ADMIN SIDEBAR ===== -->
+    <aside class="sidebar admin-sidebar" id="sidebar">
+        
+        <a href="dashboard.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div>
+                <span class="brand-text">AI ToolCor</span>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+        </a>
+
+        <div class="admin-user-card">
+            <div class="user-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="adminUsername">admin</span>
+                <span class="user-role">Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav admin-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="tools.html" class="nav-item">
+                <i class="fa-solid fa-toolbox"></i>
+                <span>Manage Tools</span>
+                <span class="nav-count" id="navToolCount">70</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="categories.html" class="nav-item active">
+                <i class="fa-solid fa-folder-tree"></i>
+                <span>Categories</span>
+                <span class="nav-count" id="navCatCount">7</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" target="_blank" class="visit-site-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Visit Site
+            </a>
+            <button class="logout-btn" onclick="confirmLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar admin-topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-title-bar">
+                <h1>
+                    <i class="fa-solid fa-folder-tree"></i>
+                    Manage Categories
+                </h1>
+                <p>Organize, edit and manage tool categories</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="chip" onclick="resetCategoriesToDefault()">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span class="hide-sm">Reset</span>
+                </button>
+                <button class="chip-primary" onclick="openAddCategoryModal()">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="hide-sm">Add Category</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Row -->
+        <section class="tools-stats">
+            <div class="ts-card">
+                <span class="ts-label">Total Categories</span>
+                <span class="ts-value text-purple" id="totalCatsCount">7</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Total Tools</span>
+                <span class="ts-value" id="totalToolsCount">70</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Active Tools</span>
+                <span class="ts-value text-green" id="activeToolsCount">70</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Avg Tools/Cat</span>
+                <span class="ts-value text-blue" id="avgToolsCount">10</span>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="card">
+            <div class="card-head">
+                <div>
+                    <h2>📂 All Categories</h2>
+                    <p class="muted">Click on any category to edit</p>
+                </div>
+            </div>
+
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <span>© 2024 AI ToolCor Admin Panel</span>
+            <nav class="footer-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="tools.html">Tools</a>
+            </nav>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- ===== ADD/EDIT CATEGORY MODAL ===== -->
+<div class="modal-overlay big-modal" id="categoryModal" onclick="closeCategoryModal(event)">
+    <div class="modal-box modal-large">
+        <div class="modal-header">
+            <h3 id="catModalTitle">
+                <i class="fa-solid fa-plus"></i>
+                Add New Category
+            </h3>
+            <button class="modal-close" onclick="closeCategoryModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="categoryForm" onsubmit="return saveCategory(event)">
+            <input type="hidden" id="catOriginalId">
+            
+            <div class="form-row">
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-tag"></i>
+                        Category Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="catName" required placeholder="e.g. Finance Tools" oninput="updateCatPreview();generateCatId()">
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-link"></i>
+                        Category ID (URL) <span class="required">*</span>
+                    </label>
+                    <input type="text" id="catId" required placeholder="finance" pattern="[a-z0-9-]+">
+                    <small class="hint">URL friendly: lowercase, hyphens only</small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-face-smile"></i>
+                        Emoji <span class="required">*</span>
+                    </label>
+                    <input type="text" id="catEmoji" required placeholder="💰" maxlength="4" oninput="updateCatPreview()">
+                    <div class="emoji-picker">
+                        <button type="button" onclick="setEmoji('💰')">💰</button>
+                        <button type="button" onclick="setEmoji('❤️')">❤️</button>
+                        <button type="button" onclick="setEmoji('💼')">💼</button>
+                        <button type="button" onclick="setEmoji('🪄')">🪄</button>
+                        <button type="button" onclick="setEmoji('🎓')">🎓</button>
+                        <button type="button" onclick="setEmoji('🔢')">🔢</button>
+                        <button type="button" onclick="setEmoji('🛠️')">🛠️</button>
+                        <button type="button" onclick="setEmoji('🎨')">🎨</button>
+                        <button type="button" onclick="setEmoji('📊')">📊</button>
+                        <button type="button" onclick="setEmoji('🌟')">🌟</button>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-icons"></i>
+                        Icon Class <span class="required">*</span>
+                    </label>
+                    <input type="text" id="catIcon" required placeholder="fa-solid fa-coins" value="fa-solid fa-folder" oninput="updateCatPreview()">
+                    <small class="hint">
+                        <a href="https://fontawesome.com/search?o=r&m=free" target="_blank">Browse Icons</a>
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>
+                    <i class="fa-solid fa-palette"></i>
+                    Color Theme <span class="required">*</span>
+                </label>
+                <div class="color-picker">
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="green" onchange="updateCatPreview()">
+                        <span class="color-swatch green" title="Green">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="pink" onchange="updateCatPreview()">
+                        <span class="color-swatch pink" title="Pink">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="blue" onchange="updateCatPreview()">
+                        <span class="color-swatch blue" title="Blue">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="peach" onchange="updateCatPreview()">
+                        <span class="color-swatch peach" title="Peach">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="purple" onchange="updateCatPreview()">
+                        <span class="color-swatch purple" title="Purple">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="catColor" value="yellow" onchange="updateCatPreview()">
+                        <span class="color-swatch yellow" title="Yellow">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>
+                    <i class="fa-solid fa-align-left"></i>
+                    Description
+                </label>
+                <textarea id="catDesc" rows="2" placeholder="Optional description..." oninput="updateCatPreview()"></textarea>
+            </div>
+
+            <!-- Live Preview -->
+            <div class="form-preview">
+                <span class="preview-label">PREVIEW</span>
+                <div class="cat-preview-card" id="catPreviewCard">
+                    <div class="cat-preview-icon green">
+                        <i class="fa-solid fa-folder"></i>
+                    </div>
+                    <div class="cat-preview-info">
+                        <span class="cat-preview-name">💰 Category Name</span>
+                        <span class="cat-preview-desc">Category description here</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" onclick="closeCategoryModal()">
+                    Cancel
+                </button>
+                <button type="submit" class="btn-modal-confirm primary">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Category
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ===== DELETE CONFIRMATION ===== -->
+<div class="modal-overlay" id="deleteCatModal" onclick="closeDeleteCatModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon danger">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3>Delete Category?</h3>
+        <p id="deleteCatMessage">Are you sure you want to delete this category?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeDeleteCatModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performDeleteCategory()">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== LOGOUT MODAL ===== -->
+<div class="modal-overlay" id="logoutModal" onclick="closeLogoutModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout from admin panel?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+</div>
+
+<!-- Scripts -->
+<script src="../js/tools-data.js"></script>
+<script src="../js/admin-storage.js"></script>
+<script src="../js/admin-categories.js"></script>
+
+</body>
+</html>

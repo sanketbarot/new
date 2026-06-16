@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator - Free Online | AI ToolCor</title>
+    <meta name="description" content="Free Scientific Calculator with trigonometric, logarithmic, exponential functions. Perfect for students and engineers.">
+    <keywords name="keywords" content="scientific calculator, trigonometry calculator, log calculator, advanced calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/math/scientific-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Scientific Calculator">
+    <meta property="og:description" content="Advanced scientific calculations.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+    <style>
+        .calc-display {
+            background: var(--ink);
+            color: white;
+            padding: 24px;
+            border-radius: var(--r-md);
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 16px;
+        }
+        .calc-history {
+            font-size: 14px;
+            color: #94A3B8;
+            min-height: 20px;
+            margin-bottom: 8px;
+        }
+        .calc-current {
+            font-size: 32px;
+            font-weight: 700;
+            word-wrap: break-word;
+            min-height: 40px;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        .calc-btn {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-line);
+            padding: 16px 8px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: var(--r-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calc-btn:hover { background: var(--ink); color: white; transform: translateY(-2px); }
+        .calc-btn.op { background: #FEF3C7; color: #92400E; }
+        .calc-btn.fn { background: #DBEAFE; color: #1E40AF; font-size: 13px; }
+        .calc-btn.eq { background: #059669; color: white; grid-column: span 2; }
+        .calc-btn.clear { background: #FEE2E2; color: #DC2626; }
+    </style>
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item active"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#math">Math</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Scientific</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon yellow"><i class="fa-solid fa-square-root-variable"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Scientific</span> Calculator</h1>
+                <p>Advanced calculator with trig & log functions</p>
+            </div>
+            <span class="tool-badge-pill popular">🔥 Popular</span>
+        </section>
+
+        <div class="card" style="max-width:700px;margin:0 auto;">
+            <div class="calc-display">
+                <div class="calc-history" id="calcHistory"></div>
+                <div class="calc-current" id="calcCurrent">0</div>
+            </div>
+
+            <div class="calc-grid">
+                <button class="calc-btn fn" onclick="appendCalc('Math.sin(')">sin</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.cos(')">cos</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.tan(')">tan</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.log10(')">log</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.log(')">ln</button>
+                
+                <button class="calc-btn fn" onclick="appendCalc('Math.PI')">π</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.E')">e</button>
+                <button class="calc-btn fn" onclick="appendCalc('Math.sqrt(')">√</button>
+                <button class="calc-btn fn" onclick="appendCalc('**2')">x²</button>
+                <button class="calc-btn fn" onclick="appendCalc('**')">x^y</button>
+                
+                <button class="calc-btn clear" onclick="clearCalc()">C</button>
+                <button class="calc-btn clear" onclick="backspaceCalc()">⌫</button>
+                <button class="calc-btn op" onclick="appendCalc('(')">(</button>
+                <button class="calc-btn op" onclick="appendCalc(')')">)</button>
+                <button class="calc-btn op" onclick="appendCalc('/')">÷</button>
+                
+                <button class="calc-btn" onclick="appendCalc('7')">7</button>
+                <button class="calc-btn" onclick="appendCalc('8')">8</button>
+                <button class="calc-btn" onclick="appendCalc('9')">9</button>
+                <button class="calc-btn op" onclick="appendCalc('*')">×</button>
+                <button class="calc-btn fn" onclick="appendCalc('!')">x!</button>
+                
+                <button class="calc-btn" onclick="appendCalc('4')">4</button>
+                <button class="calc-btn" onclick="appendCalc('5')">5</button>
+                <button class="calc-btn" onclick="appendCalc('6')">6</button>
+                <button class="calc-btn op" onclick="appendCalc('-')">−</button>
+                <button class="calc-btn fn" onclick="appendCalc('%')">%</button>
+                
+                <button class="calc-btn" onclick="appendCalc('1')">1</button>
+                <button class="calc-btn" onclick="appendCalc('2')">2</button>
+                <button class="calc-btn" onclick="appendCalc('3')">3</button>
+                <button class="calc-btn op" onclick="appendCalc('+')">+</button>
+                <button class="calc-btn fn" onclick="appendCalc('1/')">1/x</button>
+                
+                <button class="calc-btn" onclick="appendCalc('0')">0</button>
+                <button class="calc-btn" onclick="appendCalc('.')">.</button>
+                <button class="calc-btn fn" onclick="appendCalc('-')">±</button>
+                <button class="calc-btn eq" onclick="calculateCalc()">=</button>
+            </div>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#math">Math</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="scientific-calculator.js"></script>
+
+</body>
+</html>

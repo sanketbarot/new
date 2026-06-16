@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Dashboard - Admin Panel | AI ToolCor</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<!-- App Frame -->
+<div class="app-frame">
+
+    <!-- ===== ADMIN SIDEBAR ===== -->
+    <aside class="sidebar admin-sidebar" id="sidebar">
+        
+        <a href="dashboard.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div>
+                <span class="brand-text">AI ToolCor</span>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+        </a>
+
+        <div class="admin-user-card">
+            <div class="user-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="adminUsername">admin</span>
+                <span class="user-role">Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav admin-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="tools.html" class="nav-item">
+                <i class="fa-solid fa-toolbox"></i>
+                <span>Manage Tools</span>
+                <span class="nav-count">70</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="categories.html" class="nav-item">
+                <i class="fa-solid fa-folder-tree"></i>
+                <span>Categories</span>
+                <span class="nav-count">7</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" target="_blank" class="visit-site-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Visit Site
+            </a>
+            <button class="logout-btn" onclick="confirmLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar admin-topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-title-bar">
+                <h1>
+                    <i class="fa-solid fa-gauge"></i>
+                    Dashboard
+                </h1>
+                <p>Welcome back, <strong id="welcomeUser">Admin</strong>! Here's what's happening.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="chip" onclick="refreshDashboard()">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span class="hide-sm">Refresh</span>
+                </button>
+                <a href="../index.html" target="_blank" class="chip">
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="hide-sm">View Site</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Welcome Hero -->
+        <section class="card hero-section dashboard-hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <span class="eyebrow-pill">👋 Welcome back</span>
+                    <h2 class="hero-title">
+                        Admin <span class="serif-italic">Dashboard</span>
+                    </h2>
+                    <p class="hero-sub">
+                        Manage all 70+ calculators, categories and site settings from one place.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="tools.html" class="btn-primary">
+                            <i class="fa-solid fa-toolbox"></i> Manage Tools
+                        </a>
+                        <a href="settings.html" class="btn-ghost">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="hs-item">
+                        <span class="hs-value" id="totalToolsHero">70</span>
+                        <span class="hs-label">Total Tools</span>
+                    </div>
+                    <div class="hs-divider"></div>
+                    <div class="hs-item">
+                        <span class="hs-value" id="totalCatsHero">7</span>
+                        <span class="hs-label">Categories</span>
+                    </div>
+                    <div class="hs-divider"></div>
+                    <div class="hs-item">
+                        <span class="hs-value" id="popularCountHero">0</span>
+                        <span class="hs-label">Popular</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Cards -->
+        <section class="stats-grid">
+            
+            <div class="stat-card stat-purple">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Tools</span>
+                    <span class="stat-value" id="statTools">70</span>
+                    <span class="stat-trend up">
+                        <i class="fa-solid fa-arrow-up"></i> All Active
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-pink">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Popular Tools</span>
+                    <span class="stat-value" id="statPopular">0</span>
+                    <span class="stat-trend up">
+                        <i class="fa-solid fa-star"></i> Featured
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-green">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">New Tools</span>
+                    <span class="stat-value" id="statNew">0</span>
+                    <span class="stat-trend up">
+                        <i class="fa-solid fa-plus"></i> Recently Added
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-blue">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-folder-tree"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Categories</span>
+                    <span class="stat-value" id="statCats">7</span>
+                    <span class="stat-trend up">
+                        <i class="fa-solid fa-check"></i> Organized
+                    </span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Two Column Layout -->
+        <div class="dashboard-grid">
+
+            <!-- LEFT: Category Breakdown -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>📊 Tools by Category</h2>
+                        <p class="muted">Distribution across all categories</p>
+                    </div>
+                    <a href="categories.html" class="chip-sm">
+                        View All <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="category-stats" id="categoryStats">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- RIGHT: Quick Actions -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>⚡ Quick Actions</h2>
+                        <p class="muted">Manage your site quickly</p>
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <a href="tools.html" class="quick-action-card">
+                        <div class="qa-icon qa-purple">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="qa-info">
+                            <span class="qa-title">Add New Tool</span>
+                            <span class="qa-desc">Create a new calculator</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right qa-arrow"></i>
+                    </a>
+
+                    <a href="tools.html" class="quick-action-card">
+                        <div class="qa-icon qa-pink">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
+                        <div class="qa-info">
+                            <span class="qa-title">Edit Tools</span>
+                            <span class="qa-desc">Update existing calculators</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right qa-arrow"></i>
+                    </a>
+
+                    <a href="categories.html" class="quick-action-card">
+                        <div class="qa-icon qa-green">
+                            <i class="fa-solid fa-folder-plus"></i>
+                        </div>
+                        <div class="qa-info">
+                            <span class="qa-title">Manage Categories</span>
+                            <span class="qa-desc">Organize your tools</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right qa-arrow"></i>
+                    </a>
+
+                    <a href="settings.html" class="quick-action-card">
+                        <div class="qa-icon qa-blue">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <div class="qa-info">
+                            <span class="qa-title">Site Settings</span>
+                            <span class="qa-desc">Update site info & SEO</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right qa-arrow"></i>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Popular & New Tools -->
+        <div class="dashboard-grid">
+
+            <!-- Popular Tools -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>🔥 Popular Tools</h2>
+                        <p class="muted">Most featured calculators</p>
+                    </div>
+                    <a href="tools.html?filter=popular" class="chip-sm">
+                        View All <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tools-list" id="popularToolsList">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- New Tools -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>✨ New Tools</h2>
+                        <p class="muted">Recently added calculators</p>
+                    </div>
+                    <a href="tools.html?filter=new" class="chip-sm">
+                        View All <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tools-list" id="newToolsList">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- System Info -->
+        <section class="card">
+            <div class="card-head">
+                <div>
+                    <h2>ℹ️ System Information</h2>
+                    <p class="muted">Site details and statistics</p>
+                </div>
+            </div>
+            
+            <div class="system-info-grid">
+                <div class="info-item">
+                    <span class="info-label">Site Name</span>
+                    <span class="info-value">AI ToolCor Calculator</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Site URL</span>
+                    <span class="info-value">
+                        <a href="https://calculator.aitoolcor.com" target="_blank">
+                            calculator.aitoolcor.com
+                        </a>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Admin Version</span>
+                    <span class="info-value">1.0.0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Last Login</span>
+                    <span class="info-value" id="lastLogin">Just now</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Session Expires</span>
+                    <span class="info-value" id="sessionExpires">In 24 hours</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value">
+                        <span class="status-badge active">
+                            <span class="status-dot"></span> Active
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <span>© 2024 AI ToolCor Admin Panel — All rights reserved.</span>
+            <nav class="footer-links">
+                <a href="../index.html">Visit Site</a>
+                <a href="settings.html">Settings</a>
+                <a href="#" onclick="confirmLogout();return false;">Logout</a>
+            </nav>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal-overlay" id="logoutModal" onclick="closeLogoutModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout from admin panel?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeLogoutModal()">
+                Cancel
+            </button>
+            <button class="btn-modal-confirm" onclick="performLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+</div>
+
+<!-- Scripts -->
+<script src="../js/tools-data.js"></script>
+<script src="../js/admin-auth.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+
+</body>
+</html>

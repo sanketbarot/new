@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Score Calculator - Find Required Marks | AI ToolCor</title>
+    <meta name="description" content="Free Exam Score Calculator to find what marks you need in final exam to achieve target grade. Plan your studies effectively.">
+    <keywords name="keywords" content="exam score calculator, final exam grade, required marks calculator, target grade">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/education/exam-score-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Exam Score Calculator">
+    <meta property="og:description" content="Find required marks for target grade.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item active"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#education">Education</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Exam Score</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon purple"><i class="fa-solid fa-file-pen"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Exam Score</span> Calculator</h1>
+                <p>Find marks needed for target grade</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-target"></i> Score Details</h2><p class="muted">Enter your data</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="esCurrent"><i class="fa-solid fa-percent"></i> Current Score (%)</label>
+                    <input type="number" id="esCurrent" class="form-input" value="75" min="0" max="100" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="esCurrentWeight"><i class="fa-solid fa-weight-scale"></i> Current Weight (%)</label>
+                    <input type="number" id="esCurrentWeight" class="form-input" value="60" min="0" max="100">
+                    <small class="form-hint">Weight of completed assessments</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="esTarget"><i class="fa-solid fa-bullseye"></i> Target Grade (%)</label>
+                    <input type="number" id="esTarget" class="form-input" value="85" min="0" max="100" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="esFinalWeight"><i class="fa-solid fa-weight-hanging"></i> Final Exam Weight (%)</label>
+                    <input type="number" id="esFinalWeight" class="form-input" value="40" min="0" max="100">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateExamScore()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetExamScore()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-bullseye"></i> Required Score</h2></div>
+
+                <div class="result-main-display" id="esMainDisplay">
+                    <span class="result-main-label">You Need On Final</span>
+                    <span class="result-main-value" id="esRequired">100%</span>
+                    <span class="result-main-sub" id="esStatus">To achieve target</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Current</span>
+                        <span class="quick-value" id="esCurrentDisp">75%</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Target</span>
+                        <span class="quick-value" id="esTargetDisp">85%</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Breakdown</h3>
+                    <div id="esBreakdown"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Strategy</h3>
+                    <p id="esInsight">🎯 You need 100% on final to reach 85% target. Study hard!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyES()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareES()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How is required score calculated?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Required = (Target - Current × CurrentWeight%) / FinalWeight%</strong></p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What if score > 100%?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>If required score is above 100%, your target is mathematically unreachable. Adjust target or current score.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#education">Education</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="exam-score-calculator.js"></script>
+
+</body>
+</html>

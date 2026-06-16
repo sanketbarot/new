@@ -650,3 +650,420 @@
     .tool-grid { grid-template-columns: 1fr; }
     body { background: white !important; }
 }
+
+/* ============================================
+   CALCULATOR ADDITIONAL STYLES
+   ============================================ */
+
+/* ===== Range Input ===== */
+.range-input {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-soft);
+    border-radius: var(--r-pill);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.range-input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 600;
+}
+
+/* ===== Chart Bar ===== */
+.chart-bar {
+    height: 36px;
+    display: flex;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    margin: 14px 0 18px 0;
+    background: var(--bg-soft);
+}
+
+.bar-principal,
+.bar-interest {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    transition: width 0.5s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.bar-principal {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.bar-interest {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+}
+
+/* ===== Chart Legend ===== */
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: white;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border-line);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.legend-color.principal {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.legend-color.interest {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+}
+
+.legend-item div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.legend-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 600;
+}
+
+.legend-value {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 700;
+}
+
+/* ===== Schedule Section ===== */
+.schedule-section .card-head {
+    align-items: center;
+}
+
+.schedule-wrapper {
+    margin-top: 16px;
+}
+
+.table-wrapper-tool {
+    background: white;
+    border-radius: var(--r-md);
+    border: 1px solid var(--border-line);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.schedule-table thead {
+    background: var(--bg-soft);
+}
+
+.schedule-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-line);
+}
+
+.schedule-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--border-line);
+}
+
+.schedule-table tbody tr {
+    transition: background 0.15s;
+}
+
+.schedule-table tbody tr:hover {
+    background: var(--bg-soft);
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-table .text-success {
+    color: #059669;
+    font-weight: 600;
+}
+
+.schedule-table .text-danger {
+    color: #DC2626;
+    font-weight: 600;
+}
+
+/* ===== Quick Value Small ===== */
+.quick-value.small {
+    font-size: 18px;
+}
+
+/* ===== RESPONSIVE - Calculator ===== */
+@media (max-width: 968px) {
+    .chart-bar {
+        height: 32px;
+    }
+    
+    .bar-principal span,
+    .bar-interest span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .legend-item {
+        flex-direction: row;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+/* ===== GST & Tax Calculator Styles ===== */
+
+.gst-toggle {
+    display: flex;
+    background: var(--bg-soft);
+    border-radius: var(--r-pill);
+    padding: 4px;
+    gap: 4px;
+}
+
+.gst-btn {
+    flex: 1;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    border-radius: var(--r-pill);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gst-btn.active {
+    background: var(--ink);
+    color: white;
+}
+
+.gst-rates {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.gst-rate-btn {
+    padding: 10px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-line);
+    border-radius: var(--r-sm);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gst-rate-btn:hover {
+    border-color: var(--ink);
+}
+
+.gst-rate-btn.active {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+}
+
+.gst-split {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gst-split-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: white;
+    border: 1px solid var(--border-line);
+    border-radius: var(--r-sm);
+}
+
+.gst-split-item.igst {
+    background: var(--bg-soft);
+    border-color: var(--ink);
+}
+
+.gst-split-label {
+    font-size: 13px;
+    color: var(--gray-700);
+    font-weight: 600;
+}
+
+.gst-split-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.gst-split-pct {
+    font-size: 11px;
+    color: white;
+    background: var(--ink);
+    padding: 3px 10px;
+    border-radius: var(--r-pill);
+    font-weight: 700;
+}
+
+/* Tax Breakdown */
+.tax-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-line);
+    font-size: 13px;
+}
+
+.tax-row span {
+    color: var(--gray-700);
+}
+
+.tax-row strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.tax-row.total {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    background: var(--bg-soft);
+    padding: 12px 14px;
+    margin: 8px -14px;
+    border-radius: var(--r-sm);
+}
+
+.tax-row.total span {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.tax-row.total strong {
+    font-size: 16px;
+}
+
+.tax-row:last-child {
+    border-bottom: none;
+}
+
+/* ===== BMI Scale ===== */
+.bmi-scale {
+    margin: 12px 0;
+}
+
+.bmi-scale-bar {
+    display: flex;
+    height: 50px;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+}
+
+.bmi-scale-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px;
+}
+
+.bmi-scale-segment small {
+    font-size: 9px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.bmi-scale-segment.underweight { background: #3B82F6; }
+.bmi-scale-segment.normal { background: #059669; }
+.bmi-scale-segment.overweight { background: #F59E0B; }
+.bmi-scale-segment.obese { background: #DC2626; }
+
+.bmi-scale-marker {
+    position: absolute;
+    top: -22px;
+    transform: translateX(-50%);
+    color: var(--ink);
+    font-size: 24px;
+    transition: left 0.5s ease;
+    z-index: 2;
+}

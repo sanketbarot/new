@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator - Days Between Dates | AI ToolCor</title>
+    <meta name="description" content="Free Date Difference Calculator to find days, months, years between two dates. Calculate working days, hours, and add/subtract days from date.">
+    <meta name="keywords" content="date difference calculator, days between dates, date duration, working days calculator">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/daily-use/date-difference-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Date Difference Calculator">
+    <meta property="og:description" content="Calculate difference between dates.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item active"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#daily-use">Daily Use</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Date Difference</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon peach"><i class="fa-solid fa-calendar"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Date Difference</span> Calculator</h1>
+                <p>Calculate days, months, years between two dates</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-calendar-day"></i> Date Range</h2><p class="muted">Pick two dates</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateFrom"><i class="fa-solid fa-calendar"></i> From Date</label>
+                    <input type="date" id="dateFrom" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateTo"><i class="fa-solid fa-calendar-check"></i> To Date</label>
+                    <input type="date" id="dateTo" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-bolt"></i> Quick Set</label>
+                    <div class="gst-rates">
+                        <button class="gst-rate-btn" onclick="setDateRange('today')" type="button">Today</button>
+                        <button class="gst-rate-btn" onclick="setDateRange('week')" type="button">Week</button>
+                        <button class="gst-rate-btn" onclick="setDateRange('month')" type="button">Month</button>
+                        <button class="gst-rate-btn" onclick="setDateRange('year')" type="button">Year</button>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateDateDiff()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetDateDiff()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-clock"></i> Duration</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total Difference</span>
+                    <span class="result-main-value" id="ddMain">365 days</span>
+                    <span class="result-main-sub" id="ddSub">From 2024 to 2025</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Years/Months/Days</span>
+                        <span class="quick-value small" id="ddYMD">1y 0m 0d</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Working Days</span>
+                        <span class="quick-value" id="ddWorking">260</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Time Units</h3>
+                    <div id="ddBreakdown"></div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Date Info</h3>
+                    <p id="ddInsight">📅 Calculated complete duration including leap years.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyDD()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareDD()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>How is date difference calculated?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>By subtracting the two dates and converting milliseconds into <strong>days, months, years, hours, minutes</strong>. Accounts for leap years!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What are working days?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Working days</strong> exclude weekends (Saturday & Sunday). Useful for business/project planning.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Common uses?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>• Project deadlines<br>• Notice periods<br>• Anniversary calculations<br>• Visa duration<br>• Subscription periods<br>• Travel planning</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#daily-use">Daily Use</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="date-difference-calculator.js"></script>
+
+</body>
+</html>

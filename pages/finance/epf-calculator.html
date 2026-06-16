@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPF Calculator - Free Employee Provident Fund Calculator | AI ToolCor</title>
+    <meta name="description" content="Free EPF Calculator to calculate Employee Provident Fund corpus at retirement. Calculate EPF interest 8.25% with employer & employee contributions.">
+    <meta name="keywords" content="epf calculator, employee provident fund, pf calculator, epf maturity, pf interest rate">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/epf-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EPF Calculator - Calculate Provident Fund">
+    <meta property="og:description" content="Calculate EPF corpus at retirement with employer contributions. Free calculator.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/epf-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">EPF Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">EPF</span> Calculator</h1>
+                <p>Calculate Employee Provident Fund corpus • Current rate 8.25% p.a.</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> EPF Details</h2><p class="muted">Enter salary info</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="epfAge"><i class="fa-solid fa-user"></i> Current Age</label>
+                    <input type="number" id="epfAge" class="form-input" value="25" min="18" max="58">
+                    <input type="range" id="epfAgeRange" class="range-input" min="18" max="58" step="1" value="25">
+                    <div class="range-labels"><span>18</span><span>58</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="epfBasic"><i class="fa-solid fa-indian-rupee-sign"></i> Basic Salary + DA (₹)</label>
+                    <input type="number" id="epfBasic" class="form-input" value="25000" min="1000" max="500000">
+                    <input type="range" id="epfBasicRange" class="range-input" min="5000" max="200000" step="1000" value="25000">
+                    <div class="range-labels"><span>₹5K</span><span>₹2L</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="epfIncrement"><i class="fa-solid fa-arrow-trend-up"></i> Annual Salary Increment (%)</label>
+                    <input type="number" id="epfIncrement" class="form-input" value="10" min="0" max="30" step="0.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="epfRate"><i class="fa-solid fa-percent"></i> EPF Interest Rate (%)</label>
+                    <input type="number" id="epfRate" class="form-input" value="8.25" min="5" max="15" step="0.05">
+                    <small class="form-hint">Current EPF rate: 8.25% (FY 2024-25)</small>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateEPF()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetEPF()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> EPF Maturity</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Total EPF Corpus at 58</span>
+                    <span class="result-main-value" id="epfCorpus">₹2,45,67,890</span>
+                    <span class="result-main-sub" id="epfSub">In 33 years</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Your Contribution</span>
+                        <span class="quick-value" id="epfEmployee">₹35,40,000</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="quick-label">Employer's</span>
+                        <span class="quick-value" id="epfEmployer">₹35,40,000</span>
+                    </div>
+                </div>
+
+                <div class="result-quick" style="grid-template-columns: 1fr 1fr;">
+                    <div class="quick-item">
+                        <span class="quick-label">Total Deposited</span>
+                        <span class="quick-value small" id="epfDeposited">₹70,80,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Interest Earned</span>
+                        <span class="quick-value small" id="epfInterest">₹1,74,87,890</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 EPF Breakdown</h3>
+                    <div class="chart-bar">
+                        <div class="bar-principal" id="epfBarDep" style="width:29%;"><span>Deposited</span></div>
+                        <div class="bar-interest" id="epfBarInt" style="width:71%;"><span>Interest</span></div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color principal"></span>
+                            <div><span class="legend-label">Total Deposited</span><span class="legend-value" id="epfLegDep">₹70,80,000 (29%)</span></div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color interest"></span>
+                            <div><span class="legend-label">Interest</span><span class="legend-value" id="epfLegInt">₹1,74,87,890 (71%)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 EPF Insight</h3>
+                    <p id="epfInsight">🎯 EPF is EEE - Tax-free corpus! Your retirement is well-secured with employer contributions.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyEPF()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareEPF()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is EPF?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Employee Provident Fund (EPF)</strong> is a retirement savings scheme for salaried employees. Both employee and employer contribute 12% of basic salary each month.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is EPF contribution rate?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Both employee and employer contribute <strong>12% of basic salary + DA</strong>. Employer's 12% is split: 8.33% to EPS (Pension) + 3.67% to EPF.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is current EPF interest rate?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Current EPF rate is <strong>8.25% per annum</strong> (FY 2024-25). Rate is declared by EPFO annually.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Is EPF taxable?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>EPF is <strong>EEE (Tax-Free)</strong> if withdrawn after 5 years of continuous service. Pre-5 year withdrawals are taxable.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#finance">Finance</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="epf-calculator.js"></script>
+
+</body>
+</html>

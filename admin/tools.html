@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Disable Cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Manage Tools - Admin Panel | AI ToolCor</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<!-- App Frame -->
+<div class="app-frame">
+
+    <!-- ===== ADMIN SIDEBAR ===== -->
+    <aside class="sidebar admin-sidebar" id="sidebar">
+        
+        <a href="dashboard.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div>
+                <span class="brand-text">AI ToolCor</span>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+        </a>
+
+        <div class="admin-user-card">
+            <div class="user-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="adminUsername">admin</span>
+                <span class="user-role">Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav admin-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="tools.html" class="nav-item active">
+                <i class="fa-solid fa-toolbox"></i>
+                <span>Manage Tools</span>
+                <span class="nav-count" id="navToolCount">70</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="categories.html" class="nav-item">
+                <i class="fa-solid fa-folder-tree"></i>
+                <span>Categories</span>
+                <span class="nav-count">7</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" target="_blank" class="visit-site-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Visit Site
+            </a>
+            <button class="logout-btn" onclick="confirmLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar admin-topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-title-bar">
+                <h1>
+                    <i class="fa-solid fa-toolbox"></i>
+                    Manage Tools
+                </h1>
+                <p>View, edit, activate or delete calculators</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="chip" onclick="exportData()">
+                    <i class="fa-solid fa-download"></i>
+                    <span class="hide-sm">Export</span>
+                </button>
+                <button class="chip" onclick="document.getElementById('importFile').click()">
+                    <i class="fa-solid fa-upload"></i>
+                    <span class="hide-sm">Import</span>
+                </button>
+                <button class="chip-primary" onclick="openAddModal()">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="hide-sm">Add Tool</span>
+                </button>
+                <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)">
+            </div>
+        </header>
+
+        <!-- Stats Row -->
+        <section class="tools-stats">
+            <div class="ts-card">
+                <span class="ts-label">Total</span>
+                <span class="ts-value" id="totalCount">70</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Active</span>
+                <span class="ts-value text-green" id="activeCount">0</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Inactive</span>
+                <span class="ts-value text-red" id="inactiveCount">0</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Popular</span>
+                <span class="ts-value text-orange" id="popularCount">0</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">New</span>
+                <span class="ts-value text-purple" id="newCount">0</span>
+            </div>
+            <div class="ts-card">
+                <span class="ts-label">Selected</span>
+                <span class="ts-value text-blue" id="selectedCount">0</span>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="card filter-section">
+            <div class="filter-row">
+                
+                <!-- Search -->
+                <div class="search-box-admin">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="searchInput" placeholder="Search by name or description..." 
+                           oninput="filterTools()" autocomplete="off">
+                    <button class="clear-search" onclick="clearSearch()" id="clearSearch" style="display:none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Category Filter -->
+                <select id="categoryFilter" class="filter-select" onchange="filterTools()">
+                    <option value="all">All Categories</option>
+                    <option value="finance">💰 Finance</option>
+                    <option value="health">❤️ Health</option>
+                    <option value="business">💼 Business</option>
+                    <option value="daily-use">🪄 Daily Use</option>
+                    <option value="education">🎓 Education</option>
+                    <option value="math">🔢 Math</option>
+                    <option value="utility">🛠️ Utility</option>
+                </select>
+
+                <!-- Status Filter -->
+                <select id="statusFilter" class="filter-select" onchange="filterTools()">
+                    <option value="all">All Status</option>
+                    <option value="active">✅ Active Only</option>
+                    <option value="inactive">❌ Inactive Only</option>
+                    <option value="popular">🔥 Popular</option>
+                    <option value="new">✨ New</option>
+                    <option value="regular">📋 Regular</option>
+                </select>
+
+                <!-- Sort -->
+                <select id="sortBy" class="filter-select" onchange="filterTools()">
+                    <option value="id">Sort by ID</option>
+                    <option value="name">Sort by Name</option>
+                    <option value="cat">Sort by Category</option>
+                </select>
+            </div>
+
+            <!-- Bulk Actions (shown when items selected) -->
+            <div class="bulk-actions" id="bulkActions" style="display:none;">
+                <span class="bulk-label">
+                    <i class="fa-solid fa-check-square"></i>
+                    <strong id="bulkSelectedText">0 selected</strong>
+                </span>
+                <div class="bulk-buttons">
+                    <button class="bulk-btn success" onclick="bulkAction('activate')">
+                        <i class="fa-solid fa-toggle-on"></i> Activate
+                    </button>
+                    <button class="bulk-btn warning" onclick="bulkAction('deactivate')">
+                        <i class="fa-solid fa-toggle-off"></i> Deactivate
+                    </button>
+                    <button class="bulk-btn" onclick="bulkAction('popular')">
+                        <i class="fa-solid fa-fire"></i> Popular
+                    </button>
+                    <button class="bulk-btn" onclick="bulkAction('unpopular')">
+                        <i class="fa-regular fa-circle"></i> Remove Popular
+                    </button>
+                    <button class="bulk-btn" onclick="bulkAction('new')">
+                        <i class="fa-solid fa-sparkles"></i> New
+                    </button>
+                    <button class="bulk-btn danger" onclick="bulkDelete()">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                    <button class="bulk-btn" onclick="clearSelection()">
+                        <i class="fa-solid fa-xmark"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Table -->
+        <section class="card">
+            <div class="card-head">
+                <div>
+                    <h2>📋 All Tools</h2>
+                    <p class="muted">
+                        Showing <strong id="showingCount">70</strong> of <strong id="totalShowing">70</strong> tools
+                    </p>
+                </div>
+                <button class="chip-sm" onclick="resetToDefaults()" title="Reset all changes">
+                    <i class="fa-solid fa-rotate-left"></i> Reset to Default
+                </button>
+            </div>
+
+            <div class="table-wrapper-admin">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th class="col-check">
+                                <label class="check-wrap">
+                                    <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                                    <span class="check-mark"></span>
+                                </label>
+                            </th>
+                            <th class="col-id">ID</th>
+                            <th class="col-icon">Icon</th>
+                            <th class="col-name">Name</th>
+                            <th class="col-cat">Category</th>
+                            <th class="col-status">Status</th>
+                            <th class="col-active">Active</th>
+                            <th class="col-actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="toolsTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state-admin" id="emptyState" style="display:none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No tools found</h3>
+                <p>Try different search or filters</p>
+                <button class="chip-sm" onclick="resetFilters()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Filters
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <span>© 2024 AI ToolCor Admin Panel</span>
+            <nav class="footer-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="../index.html" target="_blank">Visit Site</a>
+            </nav>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- ===== ADD/EDIT TOOL MODAL ===== -->
+<div class="modal-overlay big-modal" id="toolModal" onclick="closeToolModal(event)">
+    <div class="modal-box modal-large">
+        <div class="modal-header">
+            <h3 id="modalTitle">
+                <i class="fa-solid fa-plus"></i>
+                Add New Tool
+            </h3>
+            <button class="modal-close" onclick="closeToolModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="toolForm" onsubmit="return saveTool(event)">
+            <input type="hidden" id="toolId">
+            
+            <div class="form-row">
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-tag"></i>
+                        Tool Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="toolName" required placeholder="e.g. EMI Calculator" oninput="generateSlug();updatePreview()">
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-link"></i>
+                        Slug (URL) <span class="required">*</span>
+                    </label>
+                    <input type="text" id="toolSlug" required placeholder="emi-calculator" pattern="[a-z0-9-]+">
+                    <small class="hint">URL friendly: lowercase, hyphens only</small>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>
+                    <i class="fa-solid fa-align-left"></i>
+                    Description <span class="required">*</span>
+                </label>
+                <textarea id="toolDesc" required rows="3" placeholder="Calculate monthly EMI for home, car or personal loans..." oninput="updatePreview()"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-folder"></i>
+                        Category <span class="required">*</span>
+                    </label>
+                    <select id="toolCat" required onchange="updatePreview()">
+                        <option value="finance">💰 Finance</option>
+                        <option value="health">❤️ Health</option>
+                        <option value="business">💼 Business</option>
+                        <option value="daily-use">🪄 Daily Use</option>
+                        <option value="education">🎓 Education</option>
+                        <option value="math">🔢 Math</option>
+                        <option value="utility">🛠️ Utility</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-palette"></i>
+                        Color <span class="required">*</span>
+                    </label>
+                    <select id="toolColor" required onchange="updatePreview()">
+                        <option value="green">🟢 Green</option>
+                        <option value="pink">🌸 Pink</option>
+                        <option value="blue">🔵 Blue</option>
+                        <option value="peach">🍑 Peach</option>
+                        <option value="purple">🟣 Purple</option>
+                        <option value="yellow">🟡 Yellow</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>
+                    <i class="fa-solid fa-icons"></i>
+                    Icon Class <span class="required">*</span>
+                </label>
+                <input type="text" id="toolIcon" required placeholder="fa-solid fa-calculator" value="fa-solid fa-calculator" oninput="updatePreview()">
+                <small class="hint">
+                    Use Font Awesome 6 icons: 
+                    <a href="https://fontawesome.com/search?o=r&m=free" target="_blank">Browse Icons</a>
+                </small>
+            </div>
+
+            <div class="form-row form-row-3">
+                <div class="form-field checkbox-field">
+                    <label class="check-label">
+                        <input type="checkbox" id="toolActive" checked>
+                        <span class="check-mark"></span>
+                        <span>✅ Active</span>
+                    </label>
+                </div>
+
+                <div class="form-field checkbox-field">
+                    <label class="check-label">
+                        <input type="checkbox" id="toolPopular">
+                        <span class="check-mark"></span>
+                        <span>🔥 Popular</span>
+                    </label>
+                </div>
+
+                <div class="form-field checkbox-field">
+                    <label class="check-label">
+                        <input type="checkbox" id="toolNew">
+                        <span class="check-mark"></span>
+                        <span>✨ New</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Live Preview -->
+            <div class="form-preview">
+                <span class="preview-label">PREVIEW</span>
+                <div class="preview-card" id="previewCard">
+                    <div class="tool-card-icon green">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <div class="tool-card-name">Tool Name</div>
+                        <div class="tool-card-desc">Tool description appears here...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" onclick="closeToolModal()">
+                    Cancel
+                </button>
+                <button type="submit" class="btn-modal-confirm primary">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Tool
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ===== DELETE CONFIRMATION ===== -->
+<div class="modal-overlay" id="deleteModal" onclick="closeDeleteModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon danger">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3>Delete Tool?</h3>
+        <p id="deleteMessage">Are you sure you want to delete this tool? This action cannot be undone.</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeDeleteModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performDelete()">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== LOGOUT MODAL ===== -->
+<div class="modal-overlay" id="logoutModal" onclick="closeLogoutModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout from admin panel?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+</div>
+
+<!-- Scripts -->
+<script src="../js/tools-data.js"></script>
+<script src="../js/admin-storage.js"></script>
+<script src="../js/admin-tools.js"></script>
+
+</body>
+</html>

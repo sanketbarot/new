@@ -1,0 +1,53 @@
+# AI ToolCor Calculator - robots.txt
+# https://calculator.aitoolcor.com
+
+User-agent: *
+Allow: /
+Allow: /pages/
+
+# Block admin area
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /js/admin-*
+Disallow: /css/admin.css
+
+# Block utility files
+Disallow: /assets/
+Disallow: /*.json$
+
+# Allow CSS and JS for rendering
+Allow: /css/style.css
+Allow: /css/tool.css
+Allow: /js/tools-data.js
+Allow: /js/main.js
+Allow: /js/tool-common.js
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://calculator.aitoolcor.com/sitemap.xml
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /

@@ -1,6 +1,8 @@
 // ================================================
-// AI ToolCor Admin - Authentication
+// AI ToolCor Admin - Authentication (Login Page Only)
 // ================================================
+
+'use strict';
 
 // ===== Default Credentials =====
 const ADMIN_CREDENTIALS = {
@@ -8,27 +10,38 @@ const ADMIN_CREDENTIALS = {
     password: 'aitoolcor@2024'
 };
 
-// ===== Check if Already Logged In =====
-function checkAuth() {
+// ===== Check if Already Logged In (ONLY for login page) =====
+function checkAuthOnLoginPage() {
+    // Only check if we're on login page
+    if (!window.location.pathname.includes('login.html')) {
+        return false;
+    }
+    
     const isLoggedIn = localStorage.getItem('aitoolcor_admin_auth');
     const loginTime = localStorage.getItem('aitoolcor_admin_login_time');
     
     if (isLoggedIn === 'true' && loginTime) {
         const now = Date.now();
-        const loginDate = parseInt(loginTime);
-        const hoursPassed = (now - loginDate) / (1000 * 60 * 60);
+        const hoursPassed = (now - parseInt(loginTime)) / (1000 * 60 * 60);
         
-        // Session valid for 24 hours
         if (hoursPassed < 24) {
-            // Redirect to dashboard
-            window.location.href = 'dashboard.html';
+            // Already logged in, go to dashboard
+            window.location.replace('dashboard.html');
             return true;
         } else {
             // Session expired
-            logout();
+            clearAuth();
         }
     }
     return false;
+}
+
+// ===== Clear Auth Data =====
+function clearAuth() {
+    localStorage.removeItem('aitoolcor_admin_auth');
+    localStorage.removeItem('aitoolcor_admin_login_time');
+    localStorage.removeItem('aitoolcor_admin_username');
+    localStorage.removeItem('aitoolcor_admin_remember');
 }
 
 // ===== Handle Login =====
@@ -39,7 +52,6 @@ function handleLogin(event) {
     const password = document.getElementById('password').value;
     const rememberMe = document.getElementById('rememberMe').checked;
     const errorMsg = document.getElementById('errorMsg');
-    const errorText = document.getElementById('errorText');
     const loginBtn = document.getElementById('loginBtn');
     const btnText = loginBtn.querySelector('.btn-text');
     const btnLoader = loginBtn.querySelector('.btn-loader');
@@ -47,7 +59,7 @@ function handleLogin(event) {
     // Hide previous error
     errorMsg.style.display = 'none';
     
-    // Validate empty
+    // Validate
     if (!username || !password) {
         showError('Please enter username and password');
         return false;
@@ -76,7 +88,7 @@ function handleLogin(event) {
             showToast('✅ Login successful! Redirecting...', 'success');
             
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.replace('dashboard.html');
             }, 1000);
             
         } else {
@@ -87,7 +99,6 @@ function handleLogin(event) {
             btnLoader.style.display = 'none';
             loginBtn.disabled = false;
             
-            // Clear password
             document.getElementById('password').value = '';
             document.getElementById('password').focus();
         }
@@ -100,11 +111,11 @@ function handleLogin(event) {
 function showError(message) {
     const errorMsg = document.getElementById('errorMsg');
     const errorText = document.getElementById('errorText');
+    if (!errorMsg || !errorText) return;
     
     errorText.textContent = message;
     errorMsg.style.display = 'flex';
     
-    // Auto-hide after 5 seconds
     setTimeout(() => {
         errorMsg.style.display = 'none';
     }, 5000);
@@ -114,6 +125,7 @@ function showError(message) {
 function togglePassword() {
     const password = document.getElementById('password');
     const eyeIcon = document.getElementById('eyeIcon');
+    if (!password || !eyeIcon) return;
     
     if (password.type === 'password') {
         password.type = 'text';
@@ -133,42 +145,38 @@ function showForgotInfo() {
 function showToast(message, type = 'success', duration = 2500) {
     const toast = document.getElementById('toast');
     const messageEl = document.getElementById('toastMessage');
-    
     if (!toast || !messageEl) return;
     
     messageEl.textContent = message;
-    toast.className = 'toast ' + type;
-    toast.classList.add('show');
+    toast.className = 'toast ' + type + ' show';
     
     setTimeout(() => {
         toast.classList.remove('show');
     }, duration);
 }
 
-// ===== Logout Function (used in other pages) =====
+// ===== Logout Function (used in other admin pages) =====
 function logout() {
-    localStorage.removeItem('aitoolcor_admin_auth');
-    localStorage.removeItem('aitoolcor_admin_login_time');
-    localStorage.removeItem('aitoolcor_admin_username');
-    window.location.href = 'login.html';
+    clearAuth();
+    sessionStorage.setItem('justLoggedOut', 'true');
+    window.location.replace('login.html');
 }
 
-// ===== Keyboard Shortcuts =====
-document.addEventListener('keydown', (e) => {
-    // Enter to submit
-    if (e.key === 'Enter' && document.activeElement.tagName === 'INPUT') {
-        const form = document.getElementById('loginForm');
-        if (form) form.dispatchEvent(new Event('submit', { cancelable: true }));
+// ===== Initialize (ONLY on login page) =====
+document.addEventListener('DOMContentLoaded', () => {
+    // Only run on login page
+    if (window.location.pathname.includes('login.html')) {
+        if (!sessionStorage.getItem('justLoggedOut')) {
+            checkAuthOnLoginPage();
+        }
+        sessionStorage.removeItem('justLoggedOut');
+        console.log('🔐 Admin Login Page Loaded');
     }
 });
 
-// ===== Check Auth on Page Load =====
-document.addEventListener('DOMContentLoaded', () => {
-    // Don't auto-redirect if user just logged out
-    if (!sessionStorage.getItem('justLoggedOut')) {
-        checkAuth();
-    }
-    sessionStorage.removeItem('justLoggedOut');
-    
-    console.log('🔐 Admin Login Page Loaded');
-});
+// Make functions globally available
+window.handleLogin = handleLogin;
+window.togglePassword = togglePassword;
+window.showForgotInfo = showForgotInfo;
+window.logout = logout;
+window.clearAuth = clearAuth;

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator - Free Online | AI ToolCor</title>
+    <meta name="description" content="Free Compound Interest Calculator to calculate CI on investments. Yearly, monthly, daily compounding with detailed breakdown.">
+    <meta name="keywords" content="compound interest calculator, ci calculator, compound interest formula, daily compounding">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/compound-interest-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Compound Interest Calculator - Free Online">
+    <meta property="og:description" content="Calculate compound interest with different frequencies. Free CI calculator.">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">Compound Interest</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-percent"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">Compound Interest</span> Calculator</h1>
+                <p>Calculate CI with different compounding frequencies</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> CI Details</h2><p class="muted">Enter principal & rate</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciPrincipal"><i class="fa-solid fa-indian-rupee-sign"></i> Principal Amount (₹)</label>
+                    <input type="number" id="ciPrincipal" class="form-input" value="100000" min="1">
+                    <input type="range" id="ciPrincipalRange" class="range-input" min="1000" max="10000000" step="1000" value="100000">
+                    <div class="range-labels"><span>₹1K</span><span>₹1Cr</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciRate"><i class="fa-solid fa-percent"></i> Interest Rate (% p.a.)</label>
+                    <input type="number" id="ciRate" class="form-input" value="8" min="0.1" max="50" step="0.1">
+                    <input type="range" id="ciRateRange" class="range-input" min="1" max="30" step="0.1" value="8">
+                    <div class="range-labels"><span>1%</span><span>30%</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciYears"><i class="fa-solid fa-calendar"></i> Time Period (Years)</label>
+                    <input type="number" id="ciYears" class="form-input" value="5" min="0.1" max="50" step="0.5">
+                    <input type="range" id="ciYearsRange" class="range-input" min="1" max="30" step="1" value="5">
+                    <div class="range-labels"><span>1 Yr</span><span>30 Yrs</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciCompound"><i class="fa-solid fa-rotate"></i> Compounding Frequency</label>
+                    <select id="ciCompound" class="form-input">
+                        <option value="365">Daily</option>
+                        <option value="12">Monthly</option>
+                        <option value="4" selected>Quarterly</option>
+                        <option value="2">Half-Yearly</option>
+                        <option value="1">Yearly</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculateCI()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetCI()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> CI Result</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Maturity Amount</span>
+                    <span class="result-main-value" id="ciMaturity">₹1,48,595</span>
+                    <span class="result-main-sub" id="ciSub">After 5 years (Quarterly)</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Principal</span>
+                        <span class="quick-value" id="ciPrincipalDisp">₹1,00,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Interest</span>
+                        <span class="quick-value" id="ciInterest">₹48,595</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 Composition</h3>
+                    <div class="chart-bar">
+                        <div class="bar-principal" id="ciBarPrin" style="width:67%;"><span>Principal</span></div>
+                        <div class="bar-interest" id="ciBarInt" style="width:33%;"><span>Interest</span></div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color principal"></span>
+                            <div><span class="legend-label">Principal</span><span class="legend-value" id="ciLegPrin">₹1,00,000 (67%)</span></div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color interest"></span>
+                            <div><span class="legend-label">Interest</span><span class="legend-value" id="ciLegInt">₹48,595 (33%)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 Compound Insight</h3>
+                    <p id="ciInsight">Your money will grow by 48.6% with compounding. Power of compounding!</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyCI()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="shareCI()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is Compound Interest?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Compound Interest (CI)</strong> is interest calculated on the initial principal AND accumulated interest. Often called "interest on interest" - powerful for wealth growth!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What's the CI formula?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>A = P(1 + r/n)^(nt)</strong><br>A = Maturity, P = Principal, r = Rate (decimal), n = Compounding frequency, t = Time in years</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>CI vs SI - Which is better?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Compound Interest</strong> is always better for investments (you earn more). <strong>Simple Interest</strong> is better for loans (you pay less). Difference increases with time!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Does compounding frequency matter?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes! <strong>More frequent compounding = More returns</strong>. Daily > Monthly > Quarterly > Yearly. Most banks compound quarterly.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#finance">Finance</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="compound-interest-calculator.js"></script>
+
+</body>
+</html>

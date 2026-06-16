@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Calculator - Free Public Provident Fund Calculator | AI ToolCor</title>
+    <meta name="description" content="Free PPF Calculator to calculate PPF maturity amount and interest. Calculate returns on Public Provident Fund investments with current 7.1% rate.">
+    <meta name="keywords" content="ppf calculator, public provident fund calculator, ppf maturity, ppf interest rate, ppf 15 years">
+    <meta name="author" content="AI ToolCor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculator.aitoolcor.com/pages/finance/ppf-calculator.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PPF Calculator - Calculate Public Provident Fund">
+    <meta property="og:description" content="Calculate PPF maturity and interest. Free PPF calculator with 7.1% rate.">
+    <meta property="og:url" content="https://calculator.aitoolcor.com/pages/finance/ppf-calculator.html">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tool.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+    <aside class="sidebar" id="sidebar">
+        <a href="../../index.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <span class="brand-text">AI ToolCor<sup>CALC</sup></span>
+        </a>
+        <div class="sidebar-section"><a href="../../index.html" class="nav-btn">All Tools</a></div>
+        <nav class="sidebar-nav">
+            <a href="../../index.html#finance" class="nav-item active"><i class="fa-solid fa-coins"></i><span>Finance Tools</span><span class="nav-count">20</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#health" class="nav-item"><i class="fa-solid fa-heart-pulse"></i><span>Health Tools</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#business" class="nav-item"><i class="fa-solid fa-briefcase"></i><span>Business Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#daily-use" class="nav-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Daily Use</span><span class="nav-count">10</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i><span>Education</span><span class="nav-count">6</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#math" class="nav-item"><i class="fa-solid fa-square-root-variable"></i><span>Math Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+            <a href="../../index.html#utility" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Utility Tools</span><span class="nav-count">8</span><i class="fa-solid fa-chevron-right arrow"></i></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="upgrade-card">
+                <div class="upgrade-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h4>70+ Free Tools</h4>
+                <p>All calculators free forever!</p>
+                <a href="../../index.html" class="upgrade-btn">Explore All</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="breadcrumb">
+                <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <a href="../../index.html#finance">Finance</a>
+                <i class="fa-solid fa-chevron-right sep"></i>
+                <span class="current">PPF Calculator</span>
+            </nav>
+            <div class="topbar-actions">
+                <a href="../../index.html" class="chip"><i class="fa-solid fa-house"></i><span class="hide-sm">Home</span></a>
+            </div>
+        </header>
+
+        <section class="tool-page-header">
+            <div class="tool-page-icon green"><i class="fa-solid fa-landmark"></i></div>
+            <div class="tool-page-info">
+                <h1><span class="serif-italic">PPF</span> Calculator</h1>
+                <p>Calculate Public Provident Fund returns • Current rate 7.1% p.a.</p>
+            </div>
+        </section>
+
+        <div class="tool-grid">
+            <section class="tool-card-input">
+                <div class="card-head">
+                    <div><h2><i class="fa-solid fa-sliders"></i> PPF Details</h2><p class="muted">Enter annual investment</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ppfYearly"><i class="fa-solid fa-indian-rupee-sign"></i> Yearly Investment (₹)</label>
+                    <input type="number" id="ppfYearly" class="form-input" value="150000" min="500" max="150000">
+                    <input type="range" id="ppfYearlyRange" class="range-input" min="500" max="150000" step="500" value="150000">
+                    <div class="range-labels"><span>₹500</span><span>₹1.5L (Max)</span></div>
+                    <small class="form-hint">💡 Max ₹1.5 Lakh per year. Tax benefit under 80C</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="ppfRate"><i class="fa-solid fa-percent"></i> Interest Rate (% p.a.)</label>
+                    <input type="number" id="ppfRate" class="form-input" value="7.1" min="1" max="15" step="0.1">
+                    <input type="range" id="ppfRateRange" class="range-input" min="1" max="15" step="0.1" value="7.1">
+                    <div class="range-labels"><span>1%</span><span>15%</span></div>
+                    <small class="form-hint">Current PPF rate: 7.1% (Govt revises quarterly)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="ppfYears"><i class="fa-solid fa-calendar"></i> Tenure (Years)</label>
+                    <input type="number" id="ppfYears" class="form-input" value="15" min="15" max="50" step="1">
+                    <input type="range" id="ppfYearsRange" class="range-input" min="15" max="50" step="1" value="15">
+                    <div class="range-labels"><span>15 Yrs (Min)</span><span>50 Yrs</span></div>
+                    <small class="form-hint">PPF lock-in: 15 years. Extendable in blocks of 5 years</small>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-calculate" onclick="calculatePPF()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+                    <button class="btn-reset" onclick="resetPPF()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </section>
+
+            <section class="tool-card-result">
+                <div class="result-header"><h2><i class="fa-solid fa-chart-pie"></i> PPF Maturity</h2></div>
+
+                <div class="result-main-display">
+                    <span class="result-main-label">Maturity Amount</span>
+                    <span class="result-main-value" id="ppfMaturity">₹40,68,209</span>
+                    <span class="result-main-sub" id="ppfMaturitySub">After 15 years</span>
+                </div>
+
+                <div class="result-quick">
+                    <div class="quick-item">
+                        <span class="quick-label">Total Invested</span>
+                        <span class="quick-value" id="ppfInvested">₹22,50,000</span>
+                    </div>
+                    <div class="quick-item highlight">
+                        <span class="quick-label">Interest Earned</span>
+                        <span class="quick-value" id="ppfInterest">₹18,18,209</span>
+                    </div>
+                </div>
+
+                <div class="result-quick" style="grid-template-columns: 1fr 1fr;">
+                    <div class="quick-item">
+                        <span class="quick-label">Monthly</span>
+                        <span class="quick-value small" id="ppfMonthly">₹12,500</span>
+                    </div>
+                    <div class="quick-item">
+                        <span class="quick-label">Tax Saved (30%)</span>
+                        <span class="quick-value small" id="ppfTaxSaved">₹6,75,000</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-card">
+                    <h3>📊 PPF Breakdown</h3>
+                    <div class="chart-bar">
+                        <div class="bar-principal" id="ppfBarInv" style="width:55%;"><span>Invested</span></div>
+                        <div class="bar-interest" id="ppfBarInt" style="width:45%;"><span>Interest</span></div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color principal"></span>
+                            <div><span class="legend-label">Total Invested</span><span class="legend-value" id="ppfLegInv">₹22,50,000 (55%)</span></div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color interest"></span>
+                            <div><span class="legend-label">Interest (Tax-Free!)</span><span class="legend-value" id="ppfLegInt">₹18,18,209 (45%)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <h3>💡 PPF Insight</h3>
+                    <p id="ppfInsight">🎯 PPF is EEE category - Investment, Interest & Maturity all TAX-FREE! Best for long-term wealth building.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn" onclick="copyPPF()"><i class="fa-solid fa-copy"></i> Copy</button>
+                    <button class="action-btn" onclick="sharePPF()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                    <button class="action-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+                </div>
+            </section>
+        </div>
+
+        <section class="card related-section">
+            <div class="card-head"><div><h2>🔗 Related Calculators</h2></div></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+
+        <section class="card faq-section">
+            <div class="card-head"><div><h2>❓ FAQs</h2></div></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is PPF?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p><strong>Public Provident Fund (PPF)</strong> is a govt-backed long-term savings scheme with EEE tax benefits. 15-year lock-in with current 7.1% interest rate.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is PPF interest rate?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Current PPF rate is <strong>7.1% per annum</strong> (compounded annually). Govt revises rates every quarter.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>What is PPF deposit limit?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Minimum ₹500/year, <strong>Maximum ₹1,50,000/year</strong>. Can deposit in lump sum or up to 12 installments. Eligible for 80C deduction.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Is PPF tax-free?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes! PPF is <strong>EEE (Exempt-Exempt-Exempt)</strong>:<br>• Investment: Tax deduction under 80C<br>• Interest: Tax-free<br>• Maturity: Tax-free</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)"><span>Can I extend PPF after 15 years?</span><i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes! After 15 years, you can extend in <strong>blocks of 5 years</strong> indefinitely. You can choose to deposit or not during extension.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>© 2024 <a href="https://calculator.aitoolcor.com" style="font-weight:600;color:var(--ink);">AI ToolCor Calculator</a></span>
+            <nav class="footer-links"><a href="../../index.html">Home</a><a href="../../index.html#finance">Finance</a></nav>
+        </footer>
+    </main>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="float-btn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMessage">Done!</span></div>
+
+<script src="../../js/tools-data.js"></script>
+<script src="../../js/tool-common.js"></script>
+<script src="ppf-calculator.js"></script>
+
+</body>
+</html>

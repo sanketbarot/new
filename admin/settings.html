@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Settings - Admin Panel | AI ToolCor</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<div class="bg-wrapper"><div class="bg-grain"></div></div>
+
+<div class="app-frame">
+
+    <!-- ===== ADMIN SIDEBAR ===== -->
+    <aside class="sidebar admin-sidebar" id="sidebar">
+        
+        <a href="dashboard.html" class="brand">
+            <div class="brand-icon"><div class="brand-circle"></div></div>
+            <div>
+                <span class="brand-text">AI ToolCor</span>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+        </a>
+
+        <div class="admin-user-card">
+            <div class="user-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="adminUsername">admin</span>
+                <span class="user-role">Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav admin-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="tools.html" class="nav-item">
+                <i class="fa-solid fa-toolbox"></i>
+                <span>Manage Tools</span>
+                <span class="nav-count">70</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="categories.html" class="nav-item">
+                <i class="fa-solid fa-folder-tree"></i>
+                <span>Categories</span>
+                <span class="nav-count">7</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" target="_blank" class="visit-site-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Visit Site
+            </a>
+            <button class="logout-btn" onclick="confirmLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar admin-topbar">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-title-bar">
+                <h1>
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </h1>
+                <p>Manage your site, SEO, account and data</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="chip" onclick="exportAllSettings()">
+                    <i class="fa-solid fa-download"></i>
+                    <span class="hide-sm">Backup</span>
+                </button>
+                <button class="chip-primary" onclick="saveAllSettings()">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span class="hide-sm">Save All</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Settings Tabs -->
+        <section class="card settings-tabs-card">
+            <div class="settings-tabs">
+                <button class="settings-tab active" onclick="switchTab('general')" data-tab="general">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>General</span>
+                </button>
+                <button class="settings-tab" onclick="switchTab('seo')" data-tab="seo">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <span>SEO</span>
+                </button>
+                <button class="settings-tab" onclick="switchTab('account')" data-tab="account">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Account</span>
+                </button>
+                <button class="settings-tab" onclick="switchTab('features')" data-tab="features">
+                    <i class="fa-solid fa-toggle-on"></i>
+                    <span>Features</span>
+                </button>
+                <button class="settings-tab" onclick="switchTab('backup')" data-tab="backup">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Backup</span>
+                </button>
+                <button class="settings-tab danger" onclick="switchTab('danger')" data-tab="danger">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Danger Zone</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== TAB: GENERAL ===== -->
+        <section class="card settings-panel active" id="tab-general">
+            <div class="card-head">
+                <div>
+                    <h2>🌐 General Settings</h2>
+                    <p class="muted">Site information and basic settings</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>
+                            <i class="fa-solid fa-globe"></i>
+                            Site Name <span class="required">*</span>
+                        </label>
+                        <input type="text" id="siteName" placeholder="AI ToolCor Calculator">
+                        <small class="hint">Your website's display name</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label>
+                            <i class="fa-solid fa-quote-left"></i>
+                            Site Tagline
+                        </label>
+                        <input type="text" id="siteTagline" placeholder="70+ Free Online Calculators">
+                        <small class="hint">Short description (under logo)</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>
+                            <i class="fa-solid fa-link"></i>
+                            Site URL <span class="required">*</span>
+                        </label>
+                        <input type="url" id="siteUrl" placeholder="https://calculator.aitoolcor.com">
+                    </div>
+
+                    <div class="form-field">
+                        <label>
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact Email
+                        </label>
+                        <input type="email" id="siteEmail" placeholder="hello@aitoolcor.com">
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn-save" onclick="saveGeneralSettings()">
+                        <i class="fa-solid fa-floppy-disk"></i> Save General Settings
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB: SEO ===== -->
+        <section class="card settings-panel" id="tab-seo">
+            <div class="card-head">
+                <div>
+                    <h2>🔍 SEO Settings</h2>
+                    <p class="muted">Default meta tags for search engines</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-heading"></i>
+                        Default SEO Title
+                    </label>
+                    <input type="text" id="seoTitle" placeholder="AI ToolCor Calculator - Free Online Tools" maxlength="60">
+                    <small class="hint">
+                        <span id="seoTitleCount">0</span>/60 characters
+                    </small>
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-align-left"></i>
+                        Meta Description
+                    </label>
+                    <textarea id="seoDescription" rows="3" placeholder="70+ free online calculators for finance, health, business, math and more..." maxlength="160"></textarea>
+                    <small class="hint">
+                        <span id="seoDescCount">0</span>/160 characters
+                    </small>
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-tags"></i>
+                        Meta Keywords
+                    </label>
+                    <input type="text" id="seoKeywords" placeholder="calculator, emi, sip, bmi, gst, free tools">
+                    <small class="hint">Comma separated keywords</small>
+                </div>
+
+                <!-- SEO Preview -->
+                <div class="seo-preview">
+                    <span class="preview-label">GOOGLE SEARCH PREVIEW</span>
+                    <div class="seo-preview-box">
+                        <div class="seo-preview-url" id="seoPrevUrl">https://calculator.aitoolcor.com</div>
+                        <div class="seo-preview-title" id="seoPrevTitle">AI ToolCor Calculator - Free Online Tools</div>
+                        <div class="seo-preview-desc" id="seoPrevDesc">70+ free online calculators for finance, health, business, math and more...</div>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn-save" onclick="saveSeoSettings()">
+                        <i class="fa-solid fa-floppy-disk"></i> Save SEO Settings
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB: ACCOUNT ===== -->
+        <section class="card settings-panel" id="tab-account">
+            <div class="card-head">
+                <div>
+                    <h2>👤 Admin Account</h2>
+                    <p class="muted">Manage your admin credentials</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <!-- Username -->
+                <div class="form-field">
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Username
+                    </label>
+                    <input type="text" id="accountUsername" placeholder="admin">
+                </div>
+
+                <!-- Password Section -->
+                <div class="password-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-key"></i> Change Password
+                    </h3>
+
+                    <div class="form-field">
+                        <label>Current Password <span class="required">*</span></label>
+                        <div class="input-wrap password-wrap">
+                            <input type="password" id="currentPassword" placeholder="Enter current password">
+                            <button type="button" class="password-toggle" onclick="togglePass('currentPassword', 'eye1')">
+                                <i class="fa-solid fa-eye" id="eye1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>New Password <span class="required">*</span></label>
+                            <div class="input-wrap password-wrap">
+                                <input type="password" id="newPassword" placeholder="Min 8 characters" minlength="8" oninput="checkPasswordStrength()">
+                                <button type="button" class="password-toggle" onclick="togglePass('newPassword', 'eye2')">
+                                    <i class="fa-solid fa-eye" id="eye2"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passStrength" style="display:none;">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <span class="strength-text" id="strengthText">Weak</span>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Confirm Password <span class="required">*</span></label>
+                            <div class="input-wrap password-wrap">
+                                <input type="password" id="confirmPassword" placeholder="Re-enter new password">
+                                <button type="button" class="password-toggle" onclick="togglePass('confirmPassword', 'eye3')">
+                                    <i class="fa-solid fa-eye" id="eye3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn-save" onclick="saveAccountSettings()">
+                        <i class="fa-solid fa-shield"></i> Update Account
+                    </button>
+                </div>
+
+                <div class="info-banner warning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                        <strong>Important:</strong> After changing password, you'll be logged out automatically.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB: FEATURES ===== -->
+        <section class="card settings-panel" id="tab-features">
+            <div class="card-head">
+                <div>
+                    <h2>⚡ Features</h2>
+                    <p class="muted">Enable or disable site features</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <div class="feature-toggle">
+                    <div class="feature-info">
+                        <h4>🔍 Search Bar</h4>
+                        <p>Enable search box in homepage topbar</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="featSearch" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <div class="feature-info">
+                        <h4>🔥 Popular Badge</h4>
+                        <p>Show "Popular" badge on featured tools</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="featPopular" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <div class="feature-info">
+                        <h4>✨ New Badge</h4>
+                        <p>Show "New" badge on recently added tools</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="featNew" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <div class="feature-info">
+                        <h4>🌙 Dark Mode</h4>
+                        <p>Enable dark mode toggle (coming soon)</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="featDarkMode">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <div class="feature-info">
+                        <h4>📊 Show Stats</h4>
+                        <p>Display stats in hero section</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="featStats" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn-save" onclick="saveFeaturesSettings()">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Features
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB: BACKUP ===== -->
+        <section class="card settings-panel" id="tab-backup">
+            <div class="card-head">
+                <div>
+                    <h2>💾 Backup & Restore</h2>
+                    <p class="muted">Export or import all your data</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <!-- Storage Info -->
+                <div class="storage-info-card">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-database"></i> Storage Information
+                    </h3>
+                    <div class="storage-grid" id="storageGrid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Export -->
+                <div class="backup-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-download"></i> Export Backup
+                    </h3>
+                    <p class="section-desc">Download all your data (tools, categories, settings) as JSON file</p>
+                    <button class="btn-action primary" onclick="exportAllSettings()">
+                        <i class="fa-solid fa-download"></i> Download Full Backup
+                    </button>
+                </div>
+
+                <!-- Import -->
+                <div class="backup-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-upload"></i> Import Backup
+                    </h3>
+                    <p class="section-desc">Restore data from a previously exported JSON file</p>
+                    <input type="file" id="importBackupFile" accept=".json" style="display:none;" onchange="importAllSettings(event)">
+                    <button class="btn-action secondary" onclick="document.getElementById('importBackupFile').click()">
+                        <i class="fa-solid fa-upload"></i> Choose Backup File
+                    </button>
+                </div>
+
+                <div class="info-banner success">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Recommendation:</strong> Create a backup before making major changes or updates.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TAB: DANGER ZONE ===== -->
+        <section class="card settings-panel danger-panel" id="tab-danger">
+            <div class="card-head">
+                <div>
+                    <h2 class="text-red">⚠️ Danger Zone</h2>
+                    <p class="muted">Irreversible actions - be careful!</p>
+                </div>
+            </div>
+
+            <div class="settings-form">
+                <div class="danger-zone">
+                    <div class="danger-item">
+                        <div class="danger-info">
+                            <h4>🔄 Reset Tools to Default</h4>
+                            <p>Restore all 70 tools to original state. Custom changes will be lost.</p>
+                        </div>
+                        <button class="btn-danger" onclick="confirmResetTools()">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Tools
+                        </button>
+                    </div>
+
+                    <div class="danger-item">
+                        <div class="danger-info">
+                            <h4>🔄 Reset Categories to Default</h4>
+                            <p>Restore all 7 categories to original state.</p>
+                        </div>
+                        <button class="btn-danger" onclick="confirmResetCategories()">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Categories
+                        </button>
+                    </div>
+
+                    <div class="danger-item">
+                        <div class="danger-info">
+                            <h4>🔄 Reset Settings to Default</h4>
+                            <p>Restore all site settings to factory defaults.</p>
+                        </div>
+                        <button class="btn-danger" onclick="confirmResetSettings()">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Settings
+                        </button>
+                    </div>
+
+                    <div class="danger-item critical">
+                        <div class="danger-info">
+                            <h4>🗑️ Delete All Data</h4>
+                            <p><strong>WARNING:</strong> This will delete EVERYTHING - tools, categories, settings, account. Cannot be undone!</p>
+                        </div>
+                        <button class="btn-danger critical" onclick="confirmDeleteAll()">
+                            <i class="fa-solid fa-trash"></i> Delete Everything
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <span>© 2024 AI ToolCor Admin Panel</span>
+            <nav class="footer-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="../index.html" target="_blank">Visit Site</a>
+            </nav>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- ===== CONFIRMATION MODAL ===== -->
+<div class="modal-overlay" id="confirmModal" onclick="closeConfirmModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon danger" id="confirmIcon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3 id="confirmTitle">Confirm Action</h3>
+        <p id="confirmMessage">Are you sure?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeConfirmModal()">Cancel</button>
+            <button class="btn-modal-confirm" id="confirmBtn" onclick="executeConfirmAction()">
+                <i class="fa-solid fa-check"></i> Confirm
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== LOGOUT MODAL ===== -->
+<div class="modal-overlay" id="logoutModal" onclick="closeLogoutModal(event)">
+    <div class="modal-box">
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+</div>
+
+<!-- Scripts -->
+<script src="../js/tools-data.js"></script>
+<script src="../js/admin-storage.js"></script>
+<script src="../js/admin-settings.js"></script>
+
+</body>
+</html>

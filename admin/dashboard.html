@@ -13,24 +13,19 @@
     
     <link rel="icon" type="image/x-icon" href="../assets/logos/favicon.ico">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 
-<!-- Background -->
 <div class="bg-wrapper"><div class="bg-grain"></div></div>
 
-<!-- App Frame -->
 <div class="app-frame">
 
     <!-- ===== ADMIN SIDEBAR ===== -->
@@ -94,9 +89,8 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
 
-        <!-- Topbar -->
         <header class="topbar admin-topbar">
-            <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
@@ -120,7 +114,7 @@
             </div>
         </header>
 
-        <!-- Welcome Hero -->
+        <!-- Hero -->
         <section class="card hero-section dashboard-hero">
             <div class="hero-inner">
                 <div class="hero-text">
@@ -161,65 +155,104 @@
 
         <!-- Stats Cards -->
         <section class="stats-grid">
-            
             <div class="stat-card stat-purple">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-toolbox"></i>
-                </div>
+                <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
                 <div class="stat-info">
-                    <span class="stat-label">Total Tools</span>
-                    <span class="stat-value" id="statTools">70</span>
-                    <span class="stat-trend up">
-                        <i class="fa-solid fa-arrow-up"></i> All Active
-                    </span>
+                    <span class="stat-label">Total Page Views</span>
+                    <span class="stat-value" id="statTotalViews">0</span>
+                    <span class="stat-trend up"><i class="fa-solid fa-chart-line"></i> All Time</span>
                 </div>
             </div>
 
             <div class="stat-card stat-pink">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-fire"></i>
-                </div>
+                <div class="stat-icon"><i class="fa-solid fa-fire"></i></div>
                 <div class="stat-info">
-                    <span class="stat-label">Popular Tools</span>
-                    <span class="stat-value" id="statPopular">0</span>
-                    <span class="stat-trend up">
-                        <i class="fa-solid fa-star"></i> Featured
-                    </span>
+                    <span class="stat-label">Today's Views</span>
+                    <span class="stat-value" id="statTodayViews">0</span>
+                    <span class="stat-trend up"><i class="fa-solid fa-calendar-day"></i> Today</span>
                 </div>
             </div>
 
             <div class="stat-card stat-green">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-sparkles"></i>
-                </div>
+                <div class="stat-icon"><i class="fa-solid fa-chart-bar"></i></div>
                 <div class="stat-info">
-                    <span class="stat-label">New Tools</span>
-                    <span class="stat-value" id="statNew">0</span>
-                    <span class="stat-trend up">
-                        <i class="fa-solid fa-plus"></i> Recently Added
-                    </span>
+                    <span class="stat-label">This Week</span>
+                    <span class="stat-value" id="statWeekViews">0</span>
+                    <span class="stat-trend up"><i class="fa-solid fa-calendar-week"></i> 7 Days</span>
                 </div>
             </div>
 
             <div class="stat-card stat-blue">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-folder-tree"></i>
-                </div>
+                <div class="stat-icon"><i class="fa-solid fa-toolbox"></i></div>
                 <div class="stat-info">
-                    <span class="stat-label">Categories</span>
-                    <span class="stat-value" id="statCats">7</span>
-                    <span class="stat-trend up">
-                        <i class="fa-solid fa-check"></i> Organized
-                    </span>
+                    <span class="stat-label">Tools Used</span>
+                    <span class="stat-value" id="statToolsUsed">0</span>
+                    <span class="stat-trend up"><i class="fa-solid fa-check"></i> Of 70</span>
                 </div>
             </div>
-
         </section>
 
-        <!-- Two Column Layout -->
+        <!-- ===== NEW: ANALYTICS SECTION ===== -->
+        <div class="dashboard-grid">
+            
+            <!-- Top 10 Most Used Tools -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>🏆 Top 10 Most Used Tools</h2>
+                        <p class="muted">All-time most popular calculators</p>
+                    </div>
+                    <button class="chip-sm" onclick="exportAnalytics()">
+                        <i class="fa-solid fa-download"></i> Export
+                    </button>
+                </div>
+                <div id="topToolsChart"></div>
+            </section>
+
+            <!-- Usage by Category -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>📊 Usage by Category</h2>
+                        <p class="muted">Which categories are most popular</p>
+                    </div>
+                </div>
+                <div id="categoryUsageChart"></div>
+            </section>
+        </div>
+
+        <!-- Recent Activity & Today's Stats -->
+        <div class="dashboard-grid">
+            
+            <!-- Recent Activity -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>📋 Recent Activity</h2>
+                        <p class="muted">Latest tool usage</p>
+                    </div>
+                    <button class="chip-sm" onclick="clearAnalytics()">
+                        <i class="fa-solid fa-trash"></i> Reset
+                    </button>
+                </div>
+                <div class="tools-list" id="recentActivityList"></div>
+            </section>
+
+            <!-- Daily Trend (Last 7 Days) -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h2>📈 Weekly Trend</h2>
+                        <p class="muted">Last 7 days page views</p>
+                    </div>
+                </div>
+                <div id="weeklyTrendChart"></div>
+            </section>
+        </div>
+
+        <!-- Category Breakdown & Quick Actions -->
         <div class="dashboard-grid">
 
-            <!-- LEFT: Category Breakdown -->
             <section class="card">
                 <div class="card-head">
                     <div>
@@ -230,13 +263,9 @@
                         View All <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
-                
-                <div class="category-stats" id="categoryStats">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="category-stats" id="categoryStats"></div>
             </section>
 
-            <!-- RIGHT: Quick Actions -->
             <section class="card">
                 <div class="card-head">
                     <div>
@@ -244,45 +273,33 @@
                         <p class="muted">Manage your site quickly</p>
                     </div>
                 </div>
-                
                 <div class="quick-actions">
                     <a href="tools.html" class="quick-action-card">
-                        <div class="qa-icon qa-purple">
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
+                        <div class="qa-icon qa-purple"><i class="fa-solid fa-plus"></i></div>
                         <div class="qa-info">
                             <span class="qa-title">Add New Tool</span>
                             <span class="qa-desc">Create a new calculator</span>
                         </div>
                         <i class="fa-solid fa-arrow-right qa-arrow"></i>
                     </a>
-
                     <a href="tools.html" class="quick-action-card">
-                        <div class="qa-icon qa-pink">
-                            <i class="fa-solid fa-pen"></i>
-                        </div>
+                        <div class="qa-icon qa-pink"><i class="fa-solid fa-pen"></i></div>
                         <div class="qa-info">
                             <span class="qa-title">Edit Tools</span>
                             <span class="qa-desc">Update existing calculators</span>
                         </div>
                         <i class="fa-solid fa-arrow-right qa-arrow"></i>
                     </a>
-
                     <a href="categories.html" class="quick-action-card">
-                        <div class="qa-icon qa-green">
-                            <i class="fa-solid fa-folder-plus"></i>
-                        </div>
+                        <div class="qa-icon qa-green"><i class="fa-solid fa-folder-plus"></i></div>
                         <div class="qa-info">
                             <span class="qa-title">Manage Categories</span>
                             <span class="qa-desc">Organize your tools</span>
                         </div>
                         <i class="fa-solid fa-arrow-right qa-arrow"></i>
                     </a>
-
                     <a href="settings.html" class="quick-action-card">
-                        <div class="qa-icon qa-blue">
-                            <i class="fa-solid fa-gear"></i>
-                        </div>
+                        <div class="qa-icon qa-blue"><i class="fa-solid fa-gear"></i></div>
                         <div class="qa-info">
                             <span class="qa-title">Site Settings</span>
                             <span class="qa-desc">Update site info & SEO</span>
@@ -291,44 +308,29 @@
                     </a>
                 </div>
             </section>
-
         </div>
 
         <!-- Popular & New Tools -->
         <div class="dashboard-grid">
-
-            <!-- Popular Tools -->
             <section class="card">
                 <div class="card-head">
                     <div>
                         <h2>🔥 Popular Tools</h2>
                         <p class="muted">Most featured calculators</p>
                     </div>
-                    <a href="tools.html?filter=popular" class="chip-sm">
-                        View All <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                 </div>
-                <div class="tools-list" id="popularToolsList">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="tools-list" id="popularToolsList"></div>
             </section>
 
-            <!-- New Tools -->
             <section class="card">
                 <div class="card-head">
                     <div>
                         <h2>✨ New Tools</h2>
                         <p class="muted">Recently added calculators</p>
                     </div>
-                    <a href="tools.html?filter=new" class="chip-sm">
-                        View All <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                 </div>
-                <div class="tools-list" id="newToolsList">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="tools-list" id="newToolsList"></div>
             </section>
-
         </div>
 
         <!-- System Info -->
@@ -339,44 +341,16 @@
                     <p class="muted">Site details and statistics</p>
                 </div>
             </div>
-            
             <div class="system-info-grid">
-                <div class="info-item">
-                    <span class="info-label">Site Name</span>
-                    <span class="info-value">AI ToolCor Calculator</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Site URL</span>
-                    <span class="info-value">
-                        <a href="https://calculator.aitoolcor.com" target="_blank">
-                            calculator.aitoolcor.com
-                        </a>
-                    </span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Admin Version</span>
-                    <span class="info-value">1.0.0</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Last Login</span>
-                    <span class="info-value" id="lastLogin">Just now</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Session Expires</span>
-                    <span class="info-value" id="sessionExpires">In 24 hours</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Status</span>
-                    <span class="info-value">
-                        <span class="status-badge active">
-                            <span class="status-dot"></span> Active
-                        </span>
-                    </span>
-                </div>
+                <div class="info-item"><span class="info-label">Site Name</span><span class="info-value">AI ToolCor Calculator</span></div>
+                <div class="info-item"><span class="info-label">Site URL</span><span class="info-value"><a href="https://calculator.aitoolcor.com" target="_blank">calculator.aitoolcor.com</a></span></div>
+                <div class="info-item"><span class="info-label">Admin Version</span><span class="info-value">2.0.0</span></div>
+                <div class="info-item"><span class="info-label">Last Login</span><span class="info-value" id="lastLogin">Just now</span></div>
+                <div class="info-item"><span class="info-label">Session Expires</span><span class="info-value" id="sessionExpires">In 24 hours</span></div>
+                <div class="info-item"><span class="info-label">Status</span><span class="info-value"><span class="status-badge active"><span class="status-dot"></span> Active</span></span></div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="main-footer">
             <span>© 2024 AI ToolCor Admin Panel — All rights reserved.</span>
             <nav class="footer-links">
@@ -389,35 +363,25 @@
     </main>
 </div>
 
-<!-- Mobile Overlay -->
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-<!-- Logout Confirmation Modal -->
 <div class="modal-overlay" id="logoutModal" onclick="closeLogoutModal(event)">
     <div class="modal-box">
-        <div class="modal-icon">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </div>
+        <div class="modal-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
         <h3>Confirm Logout</h3>
         <p>Are you sure you want to logout from admin panel?</p>
         <div class="modal-actions">
-            <button class="btn-modal-cancel" onclick="closeLogoutModal()">
-                Cancel
-            </button>
-            <button class="btn-modal-confirm" onclick="performLogout()">
-                <i class="fa-solid fa-right-from-bracket"></i> Logout
-            </button>
+            <button class="btn-modal-cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="btn-modal-confirm" onclick="performLogout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
         </div>
     </div>
 </div>
 
-<!-- Toast -->
 <div class="toast" id="toast">
     <i class="fa-solid fa-check-circle"></i>
     <span id="toastMessage">Done!</span>
 </div>
 
-<!-- Scripts -->
 <script src="../js/tools-data.js"></script>
 <script src="../js/admin-auth.js"></script>
 <script src="../js/admin-dashboard.js"></script>

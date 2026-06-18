@@ -1,39 +1,69 @@
+# =============================================
 # AI ToolCor Calculator - robots.txt
 # https://calculator.aitoolcor.com
+# Last updated: 2026-06-18
+# =============================================
 
+# ===== DEFAULT: Allow All Crawlers =====
 User-agent: *
 Allow: /
 Allow: /pages/
-
-# Block admin area
-Disallow: /admin/
-Disallow: /admin/*
-Disallow: /js/admin-*
-Disallow: /css/admin.css
-
-# Block utility files
-Disallow: /assets/
-Disallow: /*.json$
-
-# Allow CSS and JS for rendering
-Allow: /css/style.css
-Allow: /css/tool.css
+Allow: /css/
 Allow: /js/tools-data.js
 Allow: /js/main.js
 Allow: /js/tool-common.js
 
-# Crawl delay (optional)
-Crawl-delay: 1
+# Block admin area
+Disallow: /admin/
+Disallow: /js/admin-auth.js
+Disallow: /js/admin-dashboard.js
+Disallow: /js/admin-tools.js
+Disallow: /js/admin-categories.js
+Disallow: /js/admin-settings.js
+Disallow: /js/admin-storage.js
+Disallow: /css/admin.css
 
-# Sitemap location
+# Block data files
+Disallow: /data/
+Disallow: /manifest.json
+Disallow: /browserconfig.xml
+Disallow: /package.json
+
+# Allow assets (logos, images needed for SEO)
+Allow: /assets/logos/
+Allow: /assets/images/
+
+# Sitemap
 Sitemap: https://calculator.aitoolcor.com/sitemap.xml
 
-# Block bad bots
-User-agent: AhrefsBot
-Disallow: /
+# ===== GOOGLE (Most Important) =====
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
 
-User-agent: SemrushBot
-Disallow: /
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# ===== BING =====
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+# ===== YANDEX =====
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Crawl-delay: 5
+
+# ===== BLOCK AGGRESSIVE BOTS =====
+# Uncomment if they cause server load
+
+# User-agent: AhrefsBot
+# Crawl-delay: 10
+
+# User-agent: SemrushBot
+# Crawl-delay: 10
 
 User-agent: MJ12bot
 Disallow: /
@@ -41,13 +71,26 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Allow Google
-User-agent: Googlebot
-Allow: /
+User-agent: BLEXBot
+Disallow: /
 
-User-agent: Googlebot-Image
-Allow: /
+User-agent: PetalBot
+Disallow: /
 
-# Allow Bing
-User-agent: Bingbot
-Allow: /
+User-agent: Bytespider
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /

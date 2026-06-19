@@ -850,18 +850,7 @@
       "popular": false,
       "new": false
     },
-    {
-      "id": 67,
-      "name": "Currency Converter",
-      "slug": "currency-converter",
-      "category": "utility",
-      "description": "Convert currencies with live exchange rates.",
-      "icon": "fa-solid fa-money-bill-transfer",
-      "color": "blue",
-      "tags": ["currency", "converter", "forex"],
-      "popular": true,
-      "new": false
-    },
+   
     {
       "id": 68,
       "name": "Time Zone Converter",

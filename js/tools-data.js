@@ -82,10 +82,10 @@ const ALL_TOOLS = [
     { id:64, name:'Random Number Generator',         slug:'random-number-generator',         cat:'utility',   color:'blue',   icon:'fa-solid fa-dice',                active:true, popular:false, isNew:false, desc:'Generate random numbers in any range.' },
     { id:65, name:'Word Counter',                    slug:'word-counter',                    cat:'utility',   color:'blue',   icon:'fa-solid fa-align-left',          active:true, popular:true,  isNew:false, desc:'Count words, characters and sentences.' },
     { id:66, name:'Character Counter',               slug:'character-counter',               cat:'utility',   color:'blue',   icon:'fa-solid fa-font',                active:true, popular:false, isNew:false, desc:'Count characters with and without spaces.' },
-    { id:67, name:'Currency Converter',              slug:'currency-converter',              cat:'utility',   color:'blue',   icon:'fa-solid fa-money-bill-transfer', active:true, popular:true,  isNew:false, desc:'Convert currencies with live exchange rates.' },
-    { id:68, name:'Time Zone Converter',             slug:'time-zone-converter',             cat:'utility',   color:'blue',   icon:'fa-solid fa-earth-asia',          active:true, popular:false, isNew:false, desc:'Convert time across different time zones.' },
-    { id:69, name:'QR Code Generator',               slug:'qr-code-generator',               cat:'utility',   color:'blue',   icon:'fa-solid fa-qrcode',              active:true, popular:true,  isNew:false, desc:'Generate QR codes for any text or URL.' },
-    { id:70, name:'Color Code Converter',            slug:'color-code-converter',            cat:'utility',   color:'blue',   icon:'fa-solid fa-palette',             active:true, popular:false, isNew:true,  desc:'Convert between HEX, RGB and HSL color codes.' }
+   
+    { id:67, name:'Time Zone Converter',             slug:'time-zone-converter',             cat:'utility',   color:'blue',   icon:'fa-solid fa-earth-asia',          active:true, popular:false, isNew:false, desc:'Convert time across different time zones.' },
+    { id:68, name:'QR Code Generator',               slug:'qr-code-generator',               cat:'utility',   color:'blue',   icon:'fa-solid fa-qrcode',              active:true, popular:true,  isNew:false, desc:'Generate QR codes for any text or URL.' },
+    { id:69, name:'Color Code Converter',            slug:'color-code-converter',            cat:'utility',   color:'blue',   icon:'fa-solid fa-palette',             active:true, popular:false, isNew:true,  desc:'Convert between HEX, RGB and HSL color codes.' }
 ];
 
 // ===== Helper Functions =====

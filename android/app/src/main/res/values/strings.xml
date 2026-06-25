@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AI ToolCor Calculator</string>
+    <string name="title_activity_main">AI ToolCor Calculator</string>
+    <string name="package_name">com.aitoolcor.calculator</string>
+    <string name="custom_url_scheme">com.aitoolcor.calculator</string>
+</resources>
